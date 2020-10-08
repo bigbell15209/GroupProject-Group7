@@ -1,12 +1,12 @@
 {
   "name": "assignment1",
   "version": "1.0.0",
-  "description": "Assignment1",
+  "description": "Assignment1 Express Portfolio Site",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Eunbee Lee",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
