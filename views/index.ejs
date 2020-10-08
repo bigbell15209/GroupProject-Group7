@@ -17,7 +17,7 @@
 
   <!-- Main Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="/home">
    Justice101</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,32 +27,35 @@
     <ul class="navbar-nav ml-auto">
 
       <li class="nav-item active">
-        <a class="nav-link" href="/home">Home </a>
+        <a class="nav-link" href="/home"><i class="fas fa-lg fa-home"></i>&nbsp Home &nbsp</a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="/about">About Me </a>
+        <a class="nav-link" href="/about"><i class="far fa-lg fa-user"></i>&nbsp About Me &nbsp</a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="/projects">Projects </a>
+        <a class="nav-link" href="/projects"><i class="fas fa-lg fa-laptop-code"></i>&nbsp Projects &nbsp</a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="/services">Services </a>
+        <a class="nav-link" href="/services"><i class="fas fa-lg fa-concierge-bell"></i>&nbsp Services &nbsp</a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="/contact">Contact </a>
+        <a class="nav-link" href="/contact"><i class="fas fa-lg fa-phone-alt"></i>&nbsp Contact &nbsp</a>
       </li>
       
   </div>
 </nav>
 
+  <!-- Main Content -->
+  <main class="container">
+  <div class="jumbotron">
+  <h1 class="display-4"><%= title %></h1>
+  </div>
+  </main>
 
-
-  <h1><%= title %></h1>
-  <p>Welcome to Eunbee Lee's Site.</p>
     
   <!-- Script Section -->
   <script src="/jquery/dist/jquery.min.js"></script>
