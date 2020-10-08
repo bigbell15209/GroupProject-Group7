@@ -26,23 +26,44 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
 
+
+      <% if (title == "Eunbee Lee"){ %> 
       <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
         <a class="nav-link" href="/home"><i class="fas fa-lg fa-home"></i>&nbsp Home &nbsp</a>
       </li>
 
+      <% if (title == "About Me"){ %> 
       <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
         <a class="nav-link" href="/about"><i class="far fa-lg fa-user"></i>&nbsp About Me &nbsp</a>
       </li>
 
+      <% if (title == "Projects"){ %> 
       <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
         <a class="nav-link" href="/projects"><i class="fas fa-lg fa-laptop-code"></i>&nbsp Projects &nbsp</a>
       </li>
 
+      <% if (title == "Services"){ %> 
       <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
         <a class="nav-link" href="/services"><i class="fas fa-lg fa-concierge-bell"></i>&nbsp Services &nbsp</a>
       </li>
 
+      <% if (title == "Contact Me"){ %> 
       <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
         <a class="nav-link" href="/contact"><i class="fas fa-lg fa-phone-alt"></i>&nbsp Contact &nbsp</a>
       </li>
       
