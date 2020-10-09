@@ -1,3 +1,5 @@
+const { format } = require("morgan");
+
 // IIFE - Immediately Invoked function expression
 (function(){
 
@@ -10,6 +12,8 @@ function Start()
 
         let sendButton = document.getElementById("sendButton");
         let cancelButton = document.getElementById("cancelButton");
+        let form = document.forms[0];
+
 
         sendButton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -20,6 +24,8 @@ function Start()
             let message = document.getElementById("message").value;
 
             console.info('Full Name: ${fullName} ${contactNumber} ${emailAddress} ${message}');
+
+            format.reset();
         });
 
         cancelButton.addEventListener("click", (event) => {
@@ -29,6 +35,8 @@ function Start()
                 location.href = "/home";
             }
         });
+
+        
     }
 }
 
