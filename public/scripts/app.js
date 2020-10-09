@@ -22,10 +22,6 @@
           Message       :${message}`);
 
           form.reset();
-          fullName.value = "";
-          contactNumber.value = "";
-          email.value = "";
-          message.value = "";
       });
       cancelButton.addEventListener("click", (event) =>{
         event.preventDefault();
