@@ -22,7 +22,7 @@
     "popper.js": "^1.16.1"
   },
   "description": "comp229",
-  "main": "views/index.ejs",
+  "main": "index.ejs",
   "devDependencies": {},
   "repository": {
     "type": "git",
