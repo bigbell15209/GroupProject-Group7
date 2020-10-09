@@ -9,6 +9,21 @@
       
       sendButton.addEventListener("click", (event) =>{
           event.preventDefault();
+
+          let fullName = document.getElementById("fullName").value;
+          let contactNumber = document.getElementById("contactNumber").value;
+          let email = document.getElementById("email").value;
+          let message = document.getElementById("message").value;
+
+          console.info(`Full Name: ${fullName}
+          Contact Number: ${contactNumber}
+          Email Address :${email}
+          Message       :${message}`);
+
+          fullName.value = "";
+          contactNumber.value = "";
+          email.value = "";
+          message.value = "";
       });
       cancelButton.addEventListener("click", (event) =>{
         event.preventDefault();
