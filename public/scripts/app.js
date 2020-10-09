@@ -6,7 +6,8 @@
      {
       let sendButton = document.getElementById("sendButton");      
       let cancelButton = document.getElementById("cancelButton");
-      
+      let form = document.forms[0];
+
       sendButton.addEventListener("click", (event) =>{
           event.preventDefault();
 
@@ -20,6 +21,7 @@
           Email Address :${email}
           Message       :${message}`);
 
+          form.reset();
           fullName.value = "";
           contactNumber.value = "";
           email.value = "";
