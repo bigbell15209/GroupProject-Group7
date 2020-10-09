@@ -17,7 +17,7 @@ function Start()
             let fullName = document.getElementById("fullName").value;
             let contactNumber = document.getElementById("contactNumber").value;
             let emailAddress = document.getElementById("emailAddress").value;
-            let message = document.getElementById("firstName").value;
+            let message = document.getElementById("message").value;
 
             console.info('Full Name: ${fullName} ${contactNumber} ${emailAddress} ${message}');
         });
