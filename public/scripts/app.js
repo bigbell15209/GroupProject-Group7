@@ -14,7 +14,7 @@
         event.preventDefault();
         if(confirm("Are you sure?"))
         {
-            location.href = "/home"
+            location.href = "/home";
         }
     });
     }
