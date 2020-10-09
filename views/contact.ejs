@@ -4,12 +4,44 @@
   
 <!-- Main Content -->
   <main class="container">
-    <div class="row">
-      <div class="col">
-        <h4 class="display-4"><%= message &></h4>
+    <div class="row justify-content-md-center">
+      <div class="col-6">
+        <h2 class="display-4"><%= message &></h2>
           <hr class="my-4">
       </div>
     </div>
+
+    <div class="row hustify-content-md-center">
+        <div class="col-8">
+            <form>
+                <div class="form-group">
+                  <label for="fullname">Full Name</label>
+                  <input type="text" class="form-control" id="fullName" aria-describedby="fullName" name="fullName" placeholder="Enter your Full Name" required>     
+                </div>
+                
+                <div class="form-group">
+                    <label for="telnumber">Contact Number</label>
+                    <input type="tel" class="form-control" id="telNumber" aria-describedby="telNumber" name="telNumber" placeholder="Enter your Phone Number" required>               
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="" name="email"  placeholder="Enter your Email address" required>   
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="3" name="message"></textarea>
+                  </div>
+
+
+           
+                <button type="submit" class="btn btn-primary" id="sendButton">Send</button>
+                <button type="reset" class="btn btn-primary" id="cancelButton">Cancel</button>
+              </form>
+        </div>
+    </div>
+
   </main>
 
   <%- include partials/bottom_nav.ejs %>
