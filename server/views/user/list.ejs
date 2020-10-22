@@ -32,11 +32,11 @@
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= UserList[count].email %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= UserList[count].number %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">
-         <a href="/user-list/edit/<%= UserList[count]._id %>" class="btn btn-primary" role="button">
+         <a href="/user-list/edit/<%= UserList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
          <i class="far fa-edit"></i> Edit </a>
          </td>
          <td class="text-center ">
-         <a href="/user-list/delete/<%= UserList[count]._id %>" class="btn btn-danger" role="button">
+         <a href="/user-list/delete/<%= UserList[count]._id %>" class="btn btn-outline-danger btn-sm" role="button">
          <i class="far fa-trash-alt"></i> Delete </a>
          </td>
 
@@ -46,7 +46,7 @@
 
    </table>
   
-  <a href="/user-list/add" class="btn btn-primary" role="button">
+  <a href="/user-list/add" class="btn btn-secondary" role="button">
   <i class="fas fa-plus-circle"></i> Add a contact</a>
 
   </div>
