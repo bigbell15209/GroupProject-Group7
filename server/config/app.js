@@ -9,7 +9,14 @@ let logger = require('morgan');
 let session = require('express-session');
 let passport = require('passport');
 let passportLocal = require('passport-local');
+
+//authentication objects
 let localStrategy = passportLocal.Strategy;
+// create a Visitor Model Instance
+let visitorModel = require('../models/visitor');
+let Visitor = visitorModel.Visitor;
+
+//module for auth messaging and error management
 let flash = require('connect-flash');
 
 //database setup
@@ -43,8 +50,9 @@ app.use(express.static(path.join(__dirname, '../../public'))); // add routes aut
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 //setup express session
+let Auth = require('./auth');
 app.use(session({
-  secret: "SomeSecret",
+  secret: Auth.Secret,
   saveUninitialized: false,
   resave: false
 }));
@@ -58,9 +66,8 @@ app.use(passport.session());
 
 // passport visitor configuration
 
-// create a Visitor Model Instance
-let visitorModel = require('../models/visitor');
-let Visitor = visitorModel.Visitor;
+// impletment a User Authentication Strategy
+passport.use(Visitor.createStrategy());
 
 // serialize and deserialize the Visitor Info
 passport.serializeUser(Visitor.serializeUser());
@@ -84,6 +91,7 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error', {title: 'Error'});
+  //res.render('error');
 });
 
 module.exports = app;

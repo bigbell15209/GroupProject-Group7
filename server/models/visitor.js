@@ -2,61 +2,36 @@
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 
+let Schema = mongoose.Schema; // alias
+let Model = mongoose.model; // alias
 
-let Visitor = mongoose.Schema
-(
-    {
-        visitorname:
-        {
-            type: String,
-            default: '',
-            trim: true,
-            required: 'username is required'
-        },
-        /*
-        password:
-        {
-            type: String,
-            defalt: '';
-            trim: true,
-            required: 'password is required'
-        }
-        */
-       email:
-       {
-           type:String,
-           default: '',
-           trim: true,
-           required: 'email address is required'
-       },
-       displayName:
-       {
-           type:String,
-           default: '',
-           trim: true,
-           required: 'Display Name is required'
-       },
+
+let VisitorSchema = Schema({
+        visitorname: String,
+        // password: String,
+       email: String,
+       displayName: String,
        created:
        {
-           type:Date,
-           default: Date.now
+           type: Date,
+           default: Date.now()
        },
        update:
        {
            type:Date,
-           default: Date.now
+           default: Date.now()
        }
        
     },
     {
         collection: "visitors"
-    }
-);
+    });
 
 //configure options for User Model
+//let options = ({missingPasswordError: 'Wrong / Missing Password'});
+//Visitor.plugin(passportLocalMongoose, options);
+//module.exports.Visitor = mongoose.model('Visitor', Visitor);
 
-let options = ({missingPasswordError: 'Wrong / Missing Password'});
+VisitorSchema.plugin(passportLocalMongoose);
 
-Visitor.plugin(passportLocalMongoose, options);
-
-module.exports.Visitor = mongoose.model('Visitor', Visitor);
+module.exports.Visitor = Model('Visitor', VisitorSchema);

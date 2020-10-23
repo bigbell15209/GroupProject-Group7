@@ -15,13 +15,18 @@ module.exports.displayBookList = (req, res, next) => {
         }else{
             //console.log(UserList);
 
-            res.render('user/list', {title: 'Contacts', UserList: userList});
+            res.render('user/list', 
+            {title: 'Contacts', 
+            UserList: userList, 
+            displayName: req.visitor ? req.visitor.displayName : ''});
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('user/add', {title: 'Add List'});
+    res.render('user/add', {
+        title: 'Add List',
+        displayName: req.visitor ? req.visitor.displayName : ''});
 }
 
 module.exports.processingAddPage = (req, res, next) => {
@@ -51,7 +56,10 @@ module.exports.displayEditPage = (req, res, next) => {
            res.end(err);
        }else{
            //show the edit view
-           res.render('user/edit', {title: 'Edit Contact', user: userToEdit})
+           res.render('user/edit', {
+               title: 'Edit Contact', 
+               user: userToEdit,
+               displayName: req.visitor ? req.visitor.displayName : ''})
        }
     });
 
