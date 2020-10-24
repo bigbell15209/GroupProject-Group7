@@ -1,0 +1,36 @@
+<%- include('./partials/header.ejs') -%>
+
+<main class="container">
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron">
+        <h1 class="display-4"><%= title %></h1>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col">
+      <h4 class="display-4">This is Hankyu's <%= title %></h4>
+        <hr class="my-4">
+    </div>
+  </div>
+
+      <% if(title == 'Business List') { %>
+        <%- include('./content/business-list.ejs') -%> 
+      <% } else if(title == 'Add Business') { %>
+        <%- include('./content/add-business.ejs') -%> 
+      <% } else if(title == 'Edit Business') { %>
+        <%- include('./content/edit-business.ejs') -%> 
+      <% } %>
+
+
+
+
+    </div>
+    <%- include('./partials/main.ejs') -%>
+  </main>
+  <%- include('./partials/bottom_nav.ejs') -%>
+<%- include('./partials/footer.ejs') -%>
+    
+
+    

@@ -1,38 +1,39 @@
 {
-  "name": "comp229",
-  "version": "0.0.1",
+  "name": "lesson6",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./server.js"
+    "start": "node index.js"
   },
   "engines": {
-    "nodes": "^12.00.0",
+    "node": "^12.8.3",
     "npm": "^6.0.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "bootstrap": "^4.5.2",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
-    "express": "^4.16.4",
-    "html-pdf": "^2.2.0",
+    "express": "~4.16.1",
+    "express-session": "^1.17.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.5.1",
+    "mongoose": "^5.10.8",
     "morgan": "~1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
     "popper.js": "^1.16.1"
   },
-  "description": "comp229",
-  "main": "index.ejs",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hankyu0501/COMP229.git"
-  },
-  "author": "Hankyu",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Hankyu0501/COMP229/issues"
-  },
-  "homepage": "https://github.com/Hankyu0501/COMP229#readme"
+  "devDependencies": {
+    "@types/connect-flash": "0.0.35",
+    "@types/express": "^4.17.8",
+    "@types/express-session": "^1.17.0",
+    "@types/mongoose": "^5.7.36",
+    "@types/passport": "^1.0.4",
+    "@types/passport-local": "^1.0.33",
+    "@types/passport-local-mongoose": "^4.0.13"
+  }
 }
