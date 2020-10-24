@@ -19,24 +19,37 @@ let Visitor = visitorModel.Visitor;
 //module for auth messaging and error management
 let flash = require('connect-flash');
 
+let indexRouter = require('../routes/index');
+let usersRouter = require('../routes/users');
+let userRouter = require('../routes/user');
+
+let app = express();
+
 //database setup
 let mongoose = require('mongoose');
 let DB = require('./db');
 
 // point mongoose to the DB URI
 mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.set('useCreateIndex', true);
+let mongoDB = mongoose.connection; //alias
 
-let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
 mongoDB.once('open', ()=>{
   console.log('Connected to MongoDB...');
 });
 
-let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
-let userRouter = require('../routes/user');
+mongoDB.once('connected', ()=>{
+  console.log('MongoDB Connected');
+});
 
-let app = express();
+mongoDB.on('disconnected', ()=>{
+  console.log('MongoDB Disconnected');
+});
+
+mongoDB.on('reconnected', ()=>{
+  console.log('MongoDB Reconnected');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
