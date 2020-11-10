@@ -1,3 +1,10 @@
+/*
+File Name: Assignment2
+Student's Name: Eunbee Lee
+Student ID: 301083645
+Date: 2020 Oct 24th
+ */
+
 //installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
