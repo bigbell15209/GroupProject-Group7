@@ -1,9 +1,4 @@
-/*
-File Name: Assignment2
-Student's Name: Eunbee Lee
-Student ID: 301083645
-Date: 2020 Oct 24th
- */
+
 
 let express = require('express');
 let router = express.Router();
@@ -11,7 +6,7 @@ let mongoose = require('mongoose');
 
 let passport = require('passport');
 
-let userController = require('../controllers/user');
+let userController = require('../controllers/survey');
 
 //helper function for guard purposes
 function requireAuth(req, res, next)
@@ -24,12 +19,6 @@ function requireAuth(req, res, next)
     next();
 }
 
-/*
-// connect to our user model 
-let User = require('../models/user');
-
-let userController = require('../controllers/user');
-*/
 
 // create route // get route for the user list page - read operaton
 router.get('/',  userController.displayBookList);

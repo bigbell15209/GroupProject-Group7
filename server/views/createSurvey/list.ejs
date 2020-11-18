@@ -1,0 +1,67 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+
+<br><br><br><br>
+<!-- Main Content -->
+  <div class="row justify-content-md-center">
+  <div class="col-8">
+  <h2 class="display-3 text-center">Create Survey</h2>
+  <hr class="my-4">
+  </div>
+  </div>
+  <br>
+  <div class="row justify-content-md-center">
+  <div class="col-md-offset-3 col-md-8">
+     
+   <table class="table table-bordered table-striped table-hover">
+     <!-- Header Row -->
+     <tr>
+     <th class="text-center ">No.</th>
+     <th class="text-center ">Question</th>
+     <th class="text-center ">Question Type</th>
+     <th class="text-center "></th>
+     <th class="text-center "></th>
+     </tr>
+
+     <!-- Repeatable Template Row -->
+     <% for(let count = 0; count < SurveyList.length; count++) { %>
+         
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">
+         <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
+         <i class="far fa-edit"></i> Edit </a>
+         </td>
+         <td class="text-center ">
+         <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-outline-danger btn-sm" role="button">
+         <i class="far fa-trash-alt"></i> Delete </a>
+         </td>
+
+         </tr>
+
+     <% } %>
+
+   </table>
+
+
+
+  <a href="/survey-list/add" class="btn btn-secondary" role="button">
+  <i class="fas fa-plus-circle"></i> Add a Question</a>
+
+  <a href="/" class="btn btn-secondary" role="button">
+  <i class="fas fa-plus-circle"></i> submit</a>
+
+
+  </div>
+  </div>
+
+  </main>
+<br><br><br><br>
+
+    
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

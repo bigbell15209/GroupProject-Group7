@@ -1,9 +1,3 @@
-/*
-File Name: Assignment2
-Student's Name: Eunbee Lee
-Student ID: 301083645
-Date: 2020 Oct 24th
- */
 
 //installed 3rd party packages
 let createError = require('http-errors');
@@ -28,7 +22,7 @@ let flash = require('connect-flash');
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let userRouter = require('../routes/user');
+let surveyRouter = require('../routes/survey');
 
 let app = express();
 
@@ -95,7 +89,7 @@ passport.deserializeUser(Visitor.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/user-list', userRouter);
+app.use('/survey-list', surveyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

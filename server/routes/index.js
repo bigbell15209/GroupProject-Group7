@@ -22,13 +22,9 @@ router.get('/home', indexController.displayHomePage);
 /* GET About Me page. */
 router.get('/about', indexController.displayAboutPage);
 /* GET Projects page. */
-router.get('/projects', indexController.displayProjectsPage);
-/* GET Services page. */
-router.get('/services', indexController.displayServicesPage);
 
 /* GET Contact Me page. */
 router.get('/contact', indexController.displayContactMePage);
-
 
 // get route for displaying Login page 
 router.get('/login', indexController.displayLoginPage);

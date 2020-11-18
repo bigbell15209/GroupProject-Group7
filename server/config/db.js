@@ -1,7 +1,4 @@
 module.exports =
 {
-    // local db
-    //"URI": "mongodb://localhost/application"
-    // mongo atlas // password : aSzhOj9ApncBVN0l
-    "URI" : "mongodb+srv://eunbee:aSzhOj9ApncBVN0l@mongodbserver.lt38h.mongodb.net/application?retryWrites=true&w=majority"
+    "URI" : "mongodb+srv://Eunbee301083645:LPYygZ2Dz2FM5RzV@cluster0.g065m.mongodb.net/KSurvey?retryWrites=true&w=majority"
 }
