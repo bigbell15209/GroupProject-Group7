@@ -34,7 +34,9 @@ module.exports.processingAddPage = (req, res, next) => {
     let newSurvey = Survey({
        "questionNum": req.body.questionNumber,
        "question" : req.body.question,
-       "questionType" : req.body.questionType
+       "questionType" : req.body.questionType,
+       "creator": req.user._id,
+       "writer" : req.user.displayName
     });
 
     Survey.create(newSurvey, (err, Survey) => {

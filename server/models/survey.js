@@ -9,6 +9,7 @@ let surveyModel = mongoose.Schema({
   question: String,
   tf: String,
   creator: String,
+  writer: String,
   onOff: Boolean
 },
 {
