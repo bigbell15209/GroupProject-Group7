@@ -10,7 +10,8 @@ let mongoose = require('mongoose');
 let Survey = require('../models/survey');
 
 
-module.exports.displayBookList = (req, res, next) => {
+
+module.exports.displaySurveyList = (req, res, next) => {
     Survey.find((err, surveyList) => {
         if(err){
             return console.error(err);
@@ -19,10 +20,12 @@ module.exports.displayBookList = (req, res, next) => {
             res.render('createSurvey/list', 
             {title: 'Create Survey', 
             SurveyList: surveyList, 
-            displayName: req.user ? req.user.displayName : ''});
+            displayName: req.user ? req.user.displayName : '',});
         }
     });
+    
 }
+
 
 module.exports.displayAddPage = (req, res, next) => {
     res.render('createSurvey/add', {
