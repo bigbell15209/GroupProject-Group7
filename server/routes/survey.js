@@ -20,9 +20,11 @@ function requireAuth(req, res, next)
 }
 
 
-// create route // get route for the user list page - read operaton
+// create route // get route for the survey page - read operaton
 router.get('/', requireAuth, surveyController.displaySurveyList);
 
+// post route for processing survey page - post operation
+router.post('/', requireAuth, surveyController.postSurveyList);
 
 // get route for displaying add page - create operation
 router.get('/add', requireAuth, surveyController.displayAddPage);
@@ -36,12 +38,9 @@ router.post('/add', requireAuth, surveyController.processingAddPage);
 router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
 //router.get('/edit/:id', userController.displayEditPage);
 
-
 // post route for processing edit page - update operation
 router.post('/edit/:id', requireAuth, surveyController.processingEditPage);
 //router.post('/edit/:id', userController.processingEditPage);
-
-
 
 // get to perform deletion - delete operation
 router.get('/delete/:id', requireAuth, surveyController.performDeletion);

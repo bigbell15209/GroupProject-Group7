@@ -7,13 +7,14 @@ let surveyModel = mongoose.Schema({
   questionType: String, // True & False 
   title: String, // title
   question: String,
-  tf: String, 
+  tf: String, // ?? answer 
   creator: String, // user._id = req.user(log in)
   writer: String, // user.displayname 
-  onOff: Boolean // use of survey
+  onOff: Boolean // ?? use of survey
 },
 {
   collection: "Survey"
 });
 
 module.exports = mongoose.model('Survey', surveyModel);
+

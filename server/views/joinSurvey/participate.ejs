@@ -6,7 +6,7 @@
 <!-- Main Content -->
   <div class="row justify-content-md-center">
   <div class="col-8">
-  <h2 class="display-3 text-center">Create Survey</h2>
+  <h2 class="display-3 text-center">Participate Survey</h2>
   <hr class="my-4">
   </div>
   </div>
@@ -18,8 +18,6 @@
 
       <div class="form-group">
       <label for="titleTextField"><h3>Survey Title: </h3></label>
-      <input type="text" class="form-control" id="titleTextField" 
-      name="title" placeholder="Enter the title" required>
       
 
       
@@ -29,39 +27,31 @@
      <tr>
      <th class="text-center ">No.</th>
      <th class="text-center ">Question</th>
-     <th class="text-center ">Question Type</th>
-     <th class="text-center "></th>
-     <th class="text-center "></th>
+     <th class="text-center ">Answer</th>
      </tr>
 
      <!-- Repeatable Template Row -->
-     <% for(let count = 0; count < SurveyList.length; count++) { %>
+     <% for(let count = 0; count < SurveyList.length; count++) { 
+         if(SurveyList[count].writer === 'admin2'){%>
          
          <tr>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= count + 1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">
-         <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
-         <i class="far fa-edit"></i> Edit </a>
+              <input type="radio" id="true" name="tf" value="true">
+              <label for="true">True</label>
+              <input type="radio" id="false" name="tf" value="false">
+              <label for="false">False</label>
          </td>
-         <td class="text-center ">
-         <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-outline-danger btn-sm" role="button">
-         <i class="far fa-trash-alt"></i> Delete </a>
-         </td>
-
          </tr>
 
-     <% } %>
+     <% }} %>
 
    </table>
 
-
-
-  <a href="/survey-list/add" class="btn btn-secondary" role="button">
-  <i class="fas fa-plus-circle"></i> Add a Question</a>
-
   <button type="submit" class="btn btn-outline-primary">Submit</button>
+  <a href="/" class="btn btn-outline-secondary">
+      <i class="fas fa-undo"></i> Back </a>
       </div>
 
   </form>

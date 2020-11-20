@@ -8,6 +8,7 @@ let mongoose = require('mongoose');
 
 // create a reference to the model
 let Survey = require('../models/survey');
+let Title = require('../models/titles');
 
 
 
@@ -27,6 +28,26 @@ module.exports.displaySurveyList = (req, res, next) => {
 }
 
 
+module.exports.postSurveyList = (req, res, next) => {
+    let newTitle = Title({
+       "title": req.body.title,
+       "creator": req.user._id, 
+       "writer" : req.user.displayName,
+       "onOff" : true
+    });
+
+    Title.create(newTitle, (err, Title) => {
+      if(err){
+          console.log(err);
+          res.end(err);
+      }else{
+          console.log('save');
+          res.redirect('/');
+      }
+    });
+}
+
+
 module.exports.displayAddPage = (req, res, next) => {
     res.render('createSurvey/add', {
         title: 'Add List',
@@ -38,7 +59,7 @@ module.exports.processingAddPage = (req, res, next) => {
        "questionNum": req.body.questionNumber,
        "question" : req.body.question,
        "questionType" : req.body.questionType,
-       "creator": req.user._id,
+       "creator": req.user._id, // logged in person's id
        "writer" : req.user.displayName
     });
 

@@ -7,10 +7,56 @@ let passport=require('passport');
 // create the visitor model instance
 let visitorModel=require('../models/visitor');
 let Visitor = visitorModel.Visitor; // alias
+let Title = require('../models/titles');
+let Survey = require('../models/survey');
+
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', {title: 'Home',
-    displayName: req.user ? req.user.displayName : ''});
+
+    Title.find((err, titleList) => {
+        if(err){
+            return console.error(err);
+        }else{
+
+            res.render('index', 
+            {title: 'Home', 
+            TitleList: titleList, 
+            displayName: req.user ? req.user.displayName : '',});
+        }
+    });
+}
+
+module.exports.displayParticipatePage = (req, res, next) => {
+
+    let ids = req.params.id;
+    console.log(ids);
+
+    Survey.find((err, surveyList, ids) => {
+        if(err){
+            return console.error(err);
+        }else{
+
+            res.render('joinSurvey/participate', 
+            {title: 'Participate Survey', 
+            SurveyList: surveyList,
+            displayName: req.user ? req.user.displayName : '',});
+
+        }
+    });
+}
+
+module.exports.performDeletion = (req, res, next) => {
+    let id = req.params.id;
+
+    Title.remove({_id: id}, (err) => {
+    if(err){
+        console.log(err);
+        res.end(err);
+    }else{
+        res.redirect('/');
+    }
+    });
+
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
@@ -61,7 +107,7 @@ module.exports.processLoginPage = (req, res, next) => {
             {
                 return next(err);
             }
-            return res.redirect('/survey-list');
+            return res.redirect('/');
         });
     })(req, res, next);
 
