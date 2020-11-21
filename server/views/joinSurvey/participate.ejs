@@ -32,7 +32,7 @@
 
      <!-- Repeatable Template Row -->
      <% for(let count = 0; count < SurveyList.length; count++) { 
-         if(SurveyList[count].writer === 'admin2'){%>
+         if(SurveyList[count].writer === ids){%>
          
          <tr>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= count + 1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>

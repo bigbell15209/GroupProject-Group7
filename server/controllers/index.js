@@ -31,7 +31,7 @@ module.exports.displayParticipatePage = (req, res, next) => {
     let ids = req.params.id;
     console.log(ids);
 
-    Survey.find((err, surveyList, ids) => {
+    Survey.find((err, surveyList) => {
         if(err){
             return console.error(err);
         }else{
@@ -40,8 +40,9 @@ module.exports.displayParticipatePage = (req, res, next) => {
             {title: 'Participate Survey', 
             SurveyList: surveyList,
             displayName: req.user ? req.user.displayName : '',});
-
         }
+
+        
     });
 }
 
