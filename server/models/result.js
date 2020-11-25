@@ -3,7 +3,7 @@ let mongoose = require('mongoose');
 
 //create a model class
 let resultModel = mongoose.Schema({
-  title: String, // title
+
   questionNum1: Number,
   questionNum2: Number,
   questionNum3: Number,
@@ -16,9 +16,11 @@ let resultModel = mongoose.Schema({
   tf1: String, // ?? answer 
   tf2: String, // ?? answer 
   tf3: String, // ?? answer 
+  title: String, // title
   creator: String, // Survey Creator's id
-  participant: String, // Participant's id
   writer: String, // Survey Creator's displayName
+  participant_id: String, // Participant's id
+  participant_dName: String
 },
 {
   collection: "results"

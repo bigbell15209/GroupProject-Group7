@@ -17,7 +17,13 @@
   <form class="form" method="POST">
 
       <div class="form-group">
-      <label for="titleTextField"><h3>Survey Title: <%= SurveyList.title %></h3></label>
+      <label for="titleTextField"><h3>Survey Title:</h3></label>
+
+      <input type="text" class="form-control" id="titleTextField" 
+      name="title" 
+      value="<%= SurveyList.title %>"
+      readonly>
+      <br>
       
 
       

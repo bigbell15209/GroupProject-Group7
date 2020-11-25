@@ -58,9 +58,12 @@ module.exports.postParticipatePage = (req, res, next) => {
        "questionType1" : req.body.questionType,
        "questionType2" : req.body.questionType2,
        "questionType3" : req.body.questionType3,
+       "tf1" : req.body.tf,
+       "tf2" : req.body.tf2,
+       "tf3" : req.body.tf3,
        "title" : req.body.title,
-       "creator": req.user._id, // logged in person's id
-       "writer" : req.user.displayName
+       "participant_id": req.user._id, // logged in person's id
+       "participant_dName" : req.user.displayName
     });
 
     Result.create(newResult, (err, Result) => {
@@ -76,9 +79,9 @@ module.exports.postParticipatePage = (req, res, next) => {
 
 module.exports.displayResultPage = (req, res, next) => {
 
-    let id = req.params.id; 
+    let title2 = req.params.id;
 
-    Result.findById(id, (err, surveyList) => {
+    Result.find({title: title2}, (err, resultList) => {
         if(err){
             console.error(err);
             res.end(err);
@@ -86,7 +89,7 @@ module.exports.displayResultPage = (req, res, next) => {
 
             res.render('joinSurvey/result', 
             {title: 'result Survey', 
-            SurveyList: surveyList,
+            ResultList: resultList,
             displayName: req.user ? req.user.displayName : '',});
         }
 
