@@ -17,7 +17,7 @@
   <form class="form" method="POST">
 
       <div class="form-group">
-      <label for="titleTextField"><h3>Survey Title: </h3></label>
+      <label for="titleTextField"><h3>Survey Title: <%= SurveyList.title %></h3></label>
       
 
       
@@ -31,12 +31,10 @@
      </tr>
 
      <!-- Repeatable Template Row -->
-     <% for(let count = 0; count < SurveyList.length; count++) { 
-         if(SurveyList[count].writer === ids){%>
          
          <tr>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= count + 1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList.question1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">
               <input type="radio" id="true" name="tf" value="true">
               <label for="true">True</label>
@@ -45,7 +43,28 @@
          </td>
          </tr>
 
-     <% }} %>
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList.question2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">
+              <input type="radio" id="true" name="tf2" value="true">
+              <label for="true">True</label>
+              <input type="radio" id="false" name="tf2" value="false">
+              <label for="false">False</label>
+         </td>
+         </tr>
+
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList.question3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">
+              <input type="radio" id="true" name="tf3" value="true">
+              <label for="true">True</label>
+              <input type="radio" id="false" name="tf3" value="false">
+              <label for="false">False</label>
+         </td>
+         </tr>
+
 
    </table>
 

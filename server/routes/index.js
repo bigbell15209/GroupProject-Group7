@@ -4,7 +4,7 @@ let express = require('express');
 let router = express.Router();
 
 let indexController = require('../controllers/index');
-const titles = require('../models/titles');
+const titles = require('../models/result');
 
 function requireAuth(req, res, next)
 {
@@ -44,11 +44,14 @@ router.post('/register', indexController.processRegisterPage);
 // Perform logout 
 router.get('/logout', indexController.performLogout);
 
-// Delete survey title in list
-router.get('/delete/:id', indexController.performDeletion);
-
 // get route for displaying participate survey list
 router.get('/participate/:id', requireAuth, indexController.displayParticipatePage);
+
+// get route for processing participate survey list
+router.post('/participate/:id', requireAuth, indexController.postParticipatePage);
+
+// get route for displaying result of survey
+router.get('/result/:id', indexController.displayResultPage);
 
 
 module.exports = router;

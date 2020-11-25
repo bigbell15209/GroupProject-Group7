@@ -8,12 +8,16 @@ let mongoose = require('mongoose');
 
 // create a reference to the model
 let Survey = require('../models/survey');
-let Title = require('../models/titles');
+let Title = require('../models/result');
+
 
 
 
 module.exports.displaySurveyList = (req, res, next) => {
-    Survey.find((err, surveyList) => {
+
+    
+
+    Survey.find({creator: req.user._id},(err, surveyList) => {
         if(err){
             return console.error(err);
         }else{
@@ -56,9 +60,16 @@ module.exports.displayAddPage = (req, res, next) => {
 
 module.exports.processingAddPage = (req, res, next) => {
     let newSurvey = Survey({
-       "questionNum": req.body.questionNumber,
-       "question" : req.body.question,
-       "questionType" : req.body.questionType,
+       "questionNum1": 1,
+       "questionNum2": 2,
+       "questionNum3": 3,
+       "question1" : req.body.question,
+       "question2" : req.body.question2,
+       "question3" : req.body.question3,
+       "questionType1" : req.body.questionType,
+       "questionType2" : req.body.questionType2,
+       "questionType3" : req.body.questionType3,
+       "title" : req.body.title,
        "creator": req.user._id, // logged in person's id
        "writer" : req.user.displayName
     });
@@ -97,9 +108,16 @@ module.exports.processingEditPage = (req, res, next) => {
 
     let updatedServey = Survey({
         "_id": id,
-        "questionNum": req.body.questionNum,
-        "question" : req.body.question,
-        "questionType" : req.body.questionType
+        "questionNum1": 1,
+        "questionNum2": 2,
+       "questionNum3": 3,
+       "question1" : req.body.question,
+       "question2" : req.body.question2,
+       "question3" : req.body.question3,
+       "questionType1" : req.body.questionType,
+       "questionType2" : req.body.questionType2,
+       "questionType3" : req.body.questionType3,
+       "title" : req.body.title,
 
     });
 

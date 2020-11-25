@@ -7,33 +7,34 @@ let passport=require('passport');
 // create the visitor model instance
 let visitorModel=require('../models/visitor');
 let Visitor = visitorModel.Visitor; // alias
-let Title = require('../models/titles');
+let Result = require('../models/result');
 let Survey = require('../models/survey');
 
 
 module.exports.displayHomePage = (req, res, next) => {
 
-    Title.find((err, titleList) => {
+    Survey.find((err, surveyList) => {
         if(err){
             return console.error(err);
         }else{
 
             res.render('index', 
             {title: 'Home', 
-            TitleList: titleList, 
+            SurveyList: surveyList, 
             displayName: req.user ? req.user.displayName : '',});
         }
     });
 }
 
+
 module.exports.displayParticipatePage = (req, res, next) => {
 
-    let ids = req.params.id;
-    console.log(ids);
+    let id = req.params.id; 
 
-    Survey.find((err, surveyList) => {
+    Survey.findById(id, (err, surveyList) => {
         if(err){
-            return console.error(err);
+            console.error(err);
+            res.end(err);
         }else{
 
             res.render('joinSurvey/participate', 
@@ -46,19 +47,54 @@ module.exports.displayParticipatePage = (req, res, next) => {
     });
 }
 
-module.exports.performDeletion = (req, res, next) => {
-    let id = req.params.id;
-
-    Title.remove({_id: id}, (err) => {
-    if(err){
-        console.log(err);
-        res.end(err);
-    }else{
-        res.redirect('/');
-    }
+module.exports.postParticipatePage = (req, res, next) => {
+    let newResult = Result({
+       "questionNum1": 1,
+       "questionNum2": 2,
+       "questionNum3": 3,
+       "question1" : req.body.question,
+       "question2" : req.body.question2,
+       "question3" : req.body.question3,
+       "questionType1" : req.body.questionType,
+       "questionType2" : req.body.questionType2,
+       "questionType3" : req.body.questionType3,
+       "title" : req.body.title,
+       "creator": req.user._id, // logged in person's id
+       "writer" : req.user.displayName
     });
 
+    Result.create(newResult, (err, Result) => {
+      if(err){
+          console.log(err);
+          res.end(err);
+      }else{
+          // refresh the book list
+          res.redirect('/');
+      }
+    });
 }
+
+module.exports.displayResultPage = (req, res, next) => {
+
+    let id = req.params.id; 
+
+    Result.findById(id, (err, surveyList) => {
+        if(err){
+            console.error(err);
+            res.end(err);
+        }else{
+
+            res.render('joinSurvey/result', 
+            {title: 'result Survey', 
+            SurveyList: surveyList,
+            displayName: req.user ? req.user.displayName : '',});
+        }
+
+        
+    });
+}
+
+
 
 module.exports.displayAboutPage = (req, res, next) => {
     res.render('about',{ title: 'About Us',

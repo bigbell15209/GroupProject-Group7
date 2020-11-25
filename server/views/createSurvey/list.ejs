@@ -14,42 +14,50 @@
   <div class="row justify-content-md-center">
   <div class="col-md-offset-3 col-md-8">
 
-  <form class="form" method="POST">
 
-      <div class="form-group">
-      <label for="titleTextField"><h3>Survey Title: </h3></label>
-      <input type="text" class="form-control" id="titleTextField" 
-      name="title" placeholder="Enter the title" required>
-      
-
-      
-     
-   <table class="table table-bordered table-striped table-hover">
-     <!-- Header Row -->
-     <tr>
-     <th class="text-center ">No.</th>
-     <th class="text-center ">Question</th>
-     <th class="text-center ">Question Type</th>
-     <th class="text-center "></th>
-     <th class="text-center "></th>
-     </tr>
 
      <!-- Repeatable Template Row -->
      <% for(let count = 0; count < SurveyList.length; count++) { %>
+
+       <form class="form" method="POST">
+    
+        <table class="table table-bordered table-striped table-hover">         
+
+          <!-- Header Row -->
+          <tr>
+          <th class="text-center ">No.</th>
+          <th class="text-center ">Question</th>
+          <th class="text-center ">Question Type</th>
+          </tr>
+         
          
          <tr>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         </tr>
+
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         </tr>
+
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         </tr>
+
+         <tr>
+         <td class="text-center "> <h6>Creator: <%= SurveyList[count].writer %></h6> </td>
+         <td class="text-center "> <h6>Title: <%= SurveyList[count].title %> </h6></td>
          <td class="text-center ">
          <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
          <i class="far fa-edit"></i> Edit </a>
-         </td>
-         <td class="text-center ">
          <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-outline-danger btn-sm" role="button">
          <i class="far fa-trash-alt"></i> Delete </a>
          </td>
-
          </tr>
 
      <% } %>
