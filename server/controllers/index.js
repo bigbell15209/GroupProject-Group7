@@ -80,12 +80,16 @@ module.exports.postParticipatePage = (req, res, next) => {
 module.exports.displayResultPage = (req, res, next) => {
 
     let title2 = req.params.id; 
+    let alert = require('alert');
 
     
     Result.find({title: title2}, (err, resultList) => {
         if(err){
             console.error(err);
             res.end(err);
+        }else if(resultList.length === 0){
+            res.redirect('/survey-list');
+            alert("This survey has no data.");
         }else{
 
             res.render('joinSurvey/result', 
