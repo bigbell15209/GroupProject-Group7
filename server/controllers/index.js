@@ -79,8 +79,9 @@ module.exports.postParticipatePage = (req, res, next) => {
 
 module.exports.displayResultPage = (req, res, next) => {
 
-    let title2 = req.params.id;
+    let title2 = req.params.id; 
 
+    
     Result.find({title: title2}, (err, resultList) => {
         if(err){
             console.error(err);

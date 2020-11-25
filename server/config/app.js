@@ -1,3 +1,15 @@
+/*
+Eunbee Lee - 301083645
+Wooram Moon – 301098673 
+Hankyu Shin – 301090893 
+JiHyeok Kim – 301105279 
+Jiye Yu– 301116244
+
+Web app name: K Survey 
+brief description : Creating a simple survey site by using ExpressJS
+
+*/
+
 
 //installed 3rd party packages
 let createError = require('http-errors');
