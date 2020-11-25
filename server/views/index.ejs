@@ -28,7 +28,6 @@
      <th class="text-center ">Survey Title</th>
      <th class="text-center ">Creator</th>
      <th class="text-center "></th>
-     <th class="text-center "></th>
      </tr>
 
      <!-- Repeatable Template Row -->
@@ -41,11 +40,7 @@
          <td class="text-center ">
          <a href="/participate/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
          <i class="far fa-edit"></i> Answer the Survey </a>
-         </td>
-         <td class="text-center ">
-         <a href="/result/<%= SurveyList[count].title %>" class="btn btn-outline-secondary btn-sm" role="button">
-         <i class="far fa-chart-bar"></i> Result </a>
-         </td>  
+         </td> 
          </tr>
 
      <% } %>
