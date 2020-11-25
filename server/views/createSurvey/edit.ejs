@@ -1,0 +1,62 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+
+   <br><br><br><br>
+  <div class="row justify-content-md-center">
+    <div class="col-8">
+    <h2 class="display-4 text-center">Edit Question</h2>
+    <hr class="my-4">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-3 col-md-6">
+  
+
+      <form class="form" method="POST">
+
+      <div class="form-group">
+      <label for="questionNumTextField">Question Number</label>
+      <input type="number" class="form-control" id="questionNumTextField" 
+      name="questionNum" 
+      value="<%= survey.questionNum %>"
+      required>
+      </div>
+
+      <div class="form-group">
+      <label for="numberTextField">Question</label>
+      <input type="text" class="form-control" id="questionTextField" 
+      name="question" 
+      value="<%= survey.question %>"
+      required>
+      </div>
+
+      <div class="form-group">
+      <label for="questionTypeTextField">Question Type</label>
+      <br>
+      <input type="radio" class="" id="questionType" 
+      name="questionType" value="<%= survey.questionType %>" checked required> 
+      <label for="TF">True & False</label>
+      </div>
+
+      
+      <br>
+      <button class="btn btn-outline-primary" type="submit">Submit</button>
+      &nbsp;
+      <a href="/survey-list" class="btn btn-outline-secondary">
+      <i class="fas fa-undo"></i> Back </a>
+
+      </form>
+
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
+
+
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>
