@@ -42,6 +42,11 @@ router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
 router.post('/edit/:id', requireAuth, surveyController.processingEditPage);
 //router.post('/edit/:id', userController.processingEditPage);
 
+router.get('/onoff/:id', requireAuth, surveyController.displayOnOffPage);
+router.post('/onoff/:id', requireAuth, surveyController.processingOnOffPage);
+
+
+
 // get to perform deletion - delete operation
 router.get('/delete/:id', requireAuth, surveyController.performDeletion);
 //router.get('/delete/:id', userController.performDeletion);

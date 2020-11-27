@@ -71,7 +71,8 @@ module.exports.processingAddPage = (req, res, next) => {
        "questionType3" : req.body.questionType3,
        "title" : req.body.title,
        "creator": req.user._id, // logged in person's id
-       "writer" : req.user.displayName
+       "writer" : req.user.displayName,
+       "onOff" : req.body.onOff
     });
 
     Survey.create(newSurvey, (err, Survey) => {
@@ -122,6 +123,45 @@ module.exports.processingEditPage = (req, res, next) => {
     });
 
     Survey.updateOne({_id: id}, updatedServey, (err) => {
+        if(err){
+            console.log(err);
+            res.end(err);
+        }else{
+            // refresh the user list
+            res.redirect('/survey-list');
+        }
+    });
+}
+
+
+module.exports.displayOnOffPage = (req, res, next) => {
+    let id = req.params.id;
+
+    Survey.findById(id, (err, OnOffSurvey) => {
+       if(err){
+           console.log(err);
+           res.end(err);
+       }else{
+           //show the onoff view
+           res.render('createSurvey/onoff', {
+               title: '', 
+               survey: OnOffSurvey,
+               displayName: req.user ? req.user.displayName : ''})
+       }
+    });
+
+}
+
+module.exports.processingOnOffPage = (req, res, next) => {
+    let id = req.params.id;
+
+    let updatedOnOff = Survey({
+        "_id": id,
+        "onOff": req.body.onOff
+
+    });
+
+    Survey.updateOne({_id: id}, updatedOnOff, (err) => {
         if(err){
             console.log(err);
             res.end(err);

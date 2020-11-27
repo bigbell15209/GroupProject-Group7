@@ -54,11 +54,13 @@
          <td class="text-center "> <h6>Title: <%= SurveyList[count].title %> </h6></td>
          <td class="text-center ">
          <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
-         <i class="far fa-edit"></i> Edit </a>
+          <i class="far fa-edit"></i> Edit </a>
          <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-outline-danger btn-sm" role="button">
-         <i class="far fa-trash-alt"></i> Delete </a>
+          <i class="far fa-trash-alt"></i> Delete </a>
          <a href="/result/<%= SurveyList[count].title %>" class="btn btn-outline-secondary btn-sm" role="button">
-         <i class="far fa-chart-bar"></i> Result </a>
+          <i class="far fa-chart-bar"></i> Result </a>
+         <a href="/survey-list/onoff/<%= SurveyList[count]._id %>" class="btn btn-outline-secondary btn-sm" role="button">
+          <i class="fas fa-toggle-on"></i> On/Off </a>
          </td> 
          </tr>
 
