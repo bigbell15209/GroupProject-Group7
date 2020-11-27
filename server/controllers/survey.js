@@ -14,8 +14,6 @@ let Title = require('../models/result');
 
 
 module.exports.displaySurveyList = (req, res, next) => {
-
-    
  
     Survey.find({creator: req.user._id},(err, surveyList) => {
         if(err){
