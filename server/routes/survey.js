@@ -47,4 +47,8 @@ router.get('/delete/:id', requireAuth, surveyController.performDeletion);
 //router.get('/delete/:id', userController.performDeletion);
 
 
+// jiye
+router.get('/disable/:id', requireAuth, surveyController.disable);
+
+
 module.exports = router;

@@ -33,3 +33,10 @@ body
 #text2 {
     color: #7A7378;
 }
+
+/*unable to click*/
+
+/*.btn-outline-primary{
+    pointer-events: none;
+    cursor: default;
+    }

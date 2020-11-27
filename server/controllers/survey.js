@@ -9,6 +9,7 @@ let mongoose = require('mongoose');
 // create a reference to the model
 let Survey = require('../models/survey');
 let Title = require('../models/result');
+const { disable } = require('debug');
 
 
 
@@ -147,3 +148,17 @@ module.exports.performDeletion = (req, res, next) => {
 
 }
 
+module.exports.disable = (req, res, next) => {
+    let id = req.params.id;
+
+    Survey.remove({_id: id}, (err) => {
+    if(err){
+        console.log(err);
+        res.end(err);
+    }else{
+        // refresh the user list
+        res.redirect('/home');
+    }
+    });
+
+}

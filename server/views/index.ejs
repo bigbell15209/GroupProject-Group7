@@ -21,7 +21,10 @@
 </div>
 
 
-<table class="table table-bordered table-striped table-hover">
+
+
+
+<table id ="board" class="table table-bordered table-striped table-hover">
      <!-- Header Row -->
      <tr>
      <th class="text-center ">No.</th>
@@ -38,14 +41,17 @@
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].title %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].writer %>&nbsp;&nbsp;&nbsp;&nbsp;</td>     
          <td class="text-center ">
-         <a href="/participate/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
+         <a href="/participate/<%= SurveyList[count]._id %>" id = "boardDisable" class="btn btn-outline-primary btn-sm" role="button">
          <i class="far fa-edit"></i> Answer the Survey </a>
          </td> 
          </tr>
 
      <% } %>
 
-   </table>
+  
+  
+
+
 
 
 

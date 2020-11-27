@@ -16,6 +16,18 @@ function requireAuth(req, res, next)
     next();
 }
 
+
+//j
+function boardDisable(req, res, next)
+{
+    if(click.disable())
+    {
+        return res.redirect('/home');
+    }
+}
+
+
+
 /* GET home page. */
 router.get('/', indexController.displayHomePage);
 
