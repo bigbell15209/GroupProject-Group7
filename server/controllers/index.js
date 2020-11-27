@@ -13,7 +13,9 @@ let Survey = require('../models/survey');
 
 module.exports.displayHomePage = (req, res, next) => {
 
-    Survey.find((err, surveyList) => {
+    let onAndOff = true;
+
+    Survey.find({onOff: onAndOff},  (err, surveyList) => {
         if(err){
             return console.error(err);
         }else{

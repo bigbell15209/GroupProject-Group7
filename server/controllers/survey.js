@@ -71,7 +71,8 @@ module.exports.processingAddPage = (req, res, next) => {
        "questionType3" : req.body.questionType3,
        "title" : req.body.title,
        "creator": req.user._id, // logged in person's id
-       "writer" : req.user.displayName
+       "writer" : req.user.displayName,
+       "onOff" : true
     });
 
     Survey.create(newSurvey, (err, Survey) => {
@@ -145,5 +146,42 @@ module.exports.performDeletion = (req, res, next) => {
     }
     });
 
+}
+
+module.exports.displaySettingPage = (req, res, next) => {
+    let id = req.params.id;
+
+    Survey.findById(id, (err, surveyToSetting) => {
+       if(err){
+           console.log(err);
+           res.end(err);
+       }else{
+           //show the edit view
+           res.render('createSurvey/setting', {
+               title: 'Edit Question', 
+               setting: surveyToSetting,
+               displayName: req.user ? req.user.displayName : ''})
+       }
+    });
+
+}
+
+module.exports.processingSettingPage = (req, res, next) => {
+    let id = req.params.id;
+
+    let updatedServey = Survey({
+        "_id": id,
+        "onOff" : req.body.onAndOff
+    });
+
+    Survey.updateOne({_id: id}, updatedServey, (err) => {
+        if(err){
+            console.log(err);
+            res.end(err);
+        }else{
+            // refresh the user list
+            res.redirect('/survey-list');
+        }
+    });
 }
 
