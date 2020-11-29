@@ -2,11 +2,12 @@
 <%- include ../partials/main_nav.ejs %>
 
 
-<br><br><br><br>
 <!-- Main Content -->
+<div id="partbody">
   <div class="row justify-content-md-center">
   <div class="col-8">
-  <h2 class="display-3 text-center">Participate Survey</h2>
+  <br>
+  <h2 class="display-3 text-center" style="color:#453D30; font-family: Garamond;">Participate Survey</h2>
   <hr class="my-4">
   </div>
   </div>
@@ -17,9 +18,9 @@
   <form class="form" method="POST">
 
       <div class="form-group">
-      <label for="titleTextField"><h3>Survey Title:</h3></label>
+      <label for="titleTextField" style="color:#453D30; font-family: Garamond;"><h3><b>Survey Title:</b></h3></label>
 
-      <input type="text" class="form-control" id="titleTextField" 
+      <input type="text" class="form-control" id="titleTextField" style="background-color:#453D30; color:white;" 
       name="title" 
       value="<%= SurveyList.title %>"
       readonly>
@@ -28,9 +29,9 @@
 
       
      
-   <table class="table table-bordered table-striped table-hover">
+   <table class="table table-bordered table-striped table-hover" style="background-color: #DEE7E6">
      <!-- Header Row -->
-     <tr>
+     <tr style="color:#453D30; font-family: Garamond;">
      <th class="text-center ">No.</th>
      <th class="text-center ">Question</th>
      <th class="text-center ">Answer</th>
@@ -74,9 +75,9 @@
 
    </table>
 
-  <button type="submit" class="btn btn-outline-primary">Submit</button>
-  <a href="/" class="btn btn-outline-secondary">
-      <i class="fas fa-undo"></i> Back </a>
+  <button type="submit" class="btn" style="background-color:#AD6D52; color:white; font-family: Garamond; font-size: 20px"><b>Submit</b></button>
+  <a href="/" class="btn btn-outline-secondary" style="background-color:#A8A07C; color:white; font-family: Garamond; font-size: 20px">
+      <i class="fas fa-undo" ></i><b> Back </b></a>
       </div>
 
   </form>
@@ -86,9 +87,7 @@
   </div>
 
   </main>
-<br><br><br><br>
 
-    
-
+</div>    
 <%- include ../partials/bottom_nav.ejs %>
 <%- include ../partials/footer.ejs %>
