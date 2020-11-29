@@ -54,10 +54,10 @@
       <% for(let count = 0; count < SurveyList.length; count++) { %>
           
           <tr style="background-color:white; color:#453D30;">
-          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= count + 1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td class="text-center "width="150px;">&nbsp;&nbsp;&nbsp;&nbsp;<%= count + 1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].title %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].writer %>&nbsp;&nbsp;&nbsp;&nbsp;</td>     
-          <td class="text-center ">
+          <td class="text-center " width="200px;">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].writer %>&nbsp;&nbsp;&nbsp;&nbsp;</td>     
+          <td class="text-center " width="250px;">
           <a href="/participate/<%= SurveyList[count]._id %>" class="btn btn-sm"  style="color:white;" id="anscolor" role="button">
           <i class="far fa-edit"></i><b> Answer the Survey </b></a>
           </td> 
