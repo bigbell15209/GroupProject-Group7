@@ -110,7 +110,7 @@ module.exports.processingEditPage = (req, res, next) => {
         "questionNum1": 1,
         "questionNum2": 2,
        "questionNum3": 3,
-       "question1" : req.body.question,
+       "question1" : req.body.question1,
        "question2" : req.body.question2,
        "question3" : req.body.question3,
        "questionType1" : req.body.questionType,
