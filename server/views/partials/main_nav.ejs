@@ -1,9 +1,9 @@
   <!-- Main Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/home">
+  <nav class="navbar navbar-expand-lg" id="navcolor">
+  <a class="navbar-brand" href="/home" style="color: #453D30; font-family: Garamond; font-size: 35px;">
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="./Assets/images/Logo2.png" alt="Logo" width="60" height="60" >
-   K Survey</a>
+   <b>K Survey</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,7 +17,7 @@
       <% } else { %>
       <li class="nav-item">
       <% } %>
-        <a class="nav-link" href="/home"><i class="fas fa-lg fa-home"></i>&nbsp; Home &nbsp;</a>
+        <a class="nav-link" href="/home" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-home"></i>&nbsp; Home &nbsp;</a>
       </li>
 
       <% if (title == "About Me"){ %> 
@@ -25,7 +25,7 @@
       <% } else { %>
       <li class="nav-item">
       <% } %>
-        <a class="nav-link" href="/about"><i class="far fa-lg fa-address-card"></i>&nbsp; About Us &nbsp;</a>
+        <a class="nav-link" href="/about" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="far fa-lg fa-address-card"></i>&nbsp; About Us &nbsp;</a>
       </li>
 
       <% if (title == "Contacts"){ %> 
@@ -33,7 +33,7 @@
       <% } else { %>
       <li class="nav-item">
       <% } %>
-        <a class="nav-link" href="/survey-list"><i class="fas fa-lg fa-poll-h"></i>&nbsp; Manage Survey &nbsp;</a>
+        <a class="nav-link" href="/survey-list" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-poll-h"></i>&nbsp; Manage Survey &nbsp;</a>
       </li>
 
 
@@ -42,16 +42,16 @@
       <% } else { %>
       <li class="nav-item">
       <% } %>
-        <a class="nav-link" href="/contact"><i class="fas fa-lg fa-envelope-open-text"></i>&nbsp; Contact &nbsp;</a>
+        <a class="nav-link" href="/contact" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-envelope-open-text"></i>&nbsp; Contact &nbsp;</a>
       </li>
 
       <% if(typeof displayName == 'string' && displayName) {%>
-            <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
-            <li class="nav-item active">
+            <li class="navbar-text" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+            <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
               <a class="nav-link" href="/logout"><i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
             </li>
           <% } else { %>
-            <li class="nav-item active">
+            <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
               <a class="nav-link" href="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
             </li>
           <% } %>

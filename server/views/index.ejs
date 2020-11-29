@@ -5,54 +5,73 @@
 <!-- Wooram Moon~!!! -->
 <!---->
 
-
+<div id="w1">
 <%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
 
+  <div class="position-relative p-3 p-md-1 m-md-5 text-center background4 text1">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="loading">
+          <span>W</span>
+          <span>E</span>
+          <span>L</span>
+          <span>C</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span> 
+        </h1>
+        <br>
+       <h1 class="loading1">
+          <span>K</span>
+          <span>S</span>
+          <span>u</span>
+          <span>r</span>
+          <span>v</span>
+          <span>e</span>
+          <span>y</span> 
+        </h1>
+        <p class="lead font-weight-normal"> This survey site is created for the group project. All the functions in this site are made by students. You can see the participants at 'About Us' page.</p>
+        <a class="btn" id="w4"  href="/survey-list" style="color:white; font-size:20px;" ><b>Create Survey</b></a>
+      </div>
+  </div>
 
-<br><br>
+<div id="w5">
+<br>
+<h1 class="position-relative p-3 p-md-1 m-md-5 text-center background4 text1" style="color:#453D30; font-family: Garamond;">Come and join the survey</h1>
+  <div class="container">
+      <div class="row">
+    
+  <table class="table table-bordered table-striped table-hover">
+      <!-- Header Row -->
+      <tr style="color:#453D30">
+      <th class="text-center ">No.</th>
+      <th class="text-center ">Survey Title</th>
+      <th class="text-center ">Creator</th>
+      <th class="text-center "></th>
+      </tr>
 
-<div class="position-relative p-3 p-md-1 m-md-5 text-center background4 text1">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 font-weight-normal">Welcome to <br> K Survey</h1>
-      <p class="lead font-weight-normal"> This survey site is created for the group project. All the functions in this site are made by students. You can see the participants at 'About Us' page.</p>
-      <a class="btn btn-outline-secondary" href="/survey-list">Create Survey</a>
-    </div>
-    <h1>Come and join the survey</h1>
+      <!-- Repeatable Template Row -->
+      <% for(let count = 0; count < SurveyList.length; count++) { %>
+          
+          <tr style="background-color:white; color:#453D30;">
+          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= count + 1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].title %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].writer %>&nbsp;&nbsp;&nbsp;&nbsp;</td>     
+          <td class="text-center ">
+          <a href="/participate/<%= SurveyList[count]._id %>" class="btn btn-sm"  style="color:white;" id="anscolor" role="button">
+          <i class="far fa-edit"></i><b> Answer the Survey </b></a>
+          </td> 
+          </tr>
+
+      <% } %>
+
+    </table>
+
+  </div>
+  </div>
+</div>
 </div>
 
- <div class="container">
-    <div class="row">
-
-<table class="table table-bordered table-striped table-hover">
-     <!-- Header Row -->
-     <tr>
-     <th class="text-center ">No.</th>
-     <th class="text-center ">Survey Title</th>
-     <th class="text-center ">Creator</th>
-     <th class="text-center "></th>
-     </tr>
-
-     <!-- Repeatable Template Row -->
-     <% for(let count = 0; count < SurveyList.length; count++) { %>
-         
-         <tr>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= count + 1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].title %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].writer %>&nbsp;&nbsp;&nbsp;&nbsp;</td>     
-         <td class="text-center ">
-         <a href="/participate/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
-         <i class="far fa-edit"></i> Answer the Survey </a>
-         </td> 
-         </tr>
-
-     <% } %>
-
-   </table>
-
-</div>
-</div>
-
-
+<br><br><br><br>
 <%- include partials/bottom_nav.ejs %>
 <%- include partials/footer.ejs %>
