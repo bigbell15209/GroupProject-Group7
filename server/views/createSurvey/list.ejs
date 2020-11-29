@@ -13,17 +13,16 @@
   <br>
   <div class="row justify-content-md-center">
   <div class="col-md-offset-3 col-md-8">
-
-
-
+     
+     
      <!-- Repeatable Template Row -->
      <% for(let count = 0; count < SurveyList.length; count++) { %>
-
+       <%let onAndOff = 'ON'; if(SurveyList[count].onOff === false){onAndOff = 'OFF';}%>  
        <form class="form" method="POST">
-    
+        
         <table class="table table-bordered table-striped table-hover">         
-
           <!-- Header Row -->
+          <tr> <h5>Survey: <%= onAndOff%></h5> </tr>
           <tr>
           <th class="text-center ">No.</th>
           <th class="text-center ">Question</th>
@@ -36,19 +35,16 @@
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          </tr>
-
          <tr>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          </tr>
-
          <tr>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          </tr>
-
          <tr>
          <td class="text-center "> <h6>Creator: <%= SurveyList[count].writer %></h6> </td>
          <td class="text-center "> <h6>Title: <%= SurveyList[count].title %> </h6></td>
@@ -59,16 +55,10 @@
          <i class="far fa-trash-alt"></i> Delete </a>
          <a href="/result/<%= SurveyList[count].title %>" class="btn btn-outline-secondary btn-sm" role="button">
          <i class="far fa-chart-bar"></i> Result </a>
-
-
-
-         <a href="/survey-list/disable/<%= SurveyList[count]._id %>" class="btn btn-outline-disable btn-sm" role="button">
-          <i class="far fa-pause-circle"></i> DISABLE </a>
-         
-         <br>
+         <a href="/survey-list/setting/<%= SurveyList[count]._id %>" class="btn btn-outline-info btn-sm" role="button">
+         <i class="fas fa-cog"></i> Setting </a>
          </td> 
          </tr>
-
      <% } %>
 
    </table>

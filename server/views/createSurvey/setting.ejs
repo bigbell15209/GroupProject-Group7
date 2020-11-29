@@ -1,0 +1,38 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<div class="row justify-content-md-center">
+  <div class="col-8">
+    <h2 class="display-3 text-center">Setting</h2>
+    <hr class="my-4">
+  </div>
+</div>
+<br>
+
+<div class="row justify-content-md-center">
+<div class="col-md-offset-3 col-md-8">
+
+    <form class="form" method="POST">
+
+        <div>
+        <h5>Survey ON/OFF: </h5>
+        <%{if(setting.onOff === true){ %>
+        <button class="btn btn-dark" name="onAndOff" value="false" type="submit">Turn off the Survey</button>
+        <%}if(setting.onOff === false){%>
+         <button class="btn btn-success" name="onAndOff" value="true" type="submit">Turn on the Survey</button>
+        <%}}%>
+        </div>
+        <br>
+
+        
+        <a href="/survey-list" class="btn btn-outline-secondary">
+        <i class="fas fa-undo"></i> Back </a>
+
+
+    </form>
+
+</div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

@@ -63,10 +63,111 @@
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf3F %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= numParticipants %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          </tr>
-<% }%> 
+
 </table>
 
+<br><br>
+<div class="row justify-content-md-center">
+<table class="row justify-content-md-center">
+    <tr>
+    <td>
+    <canvas id="myChart" >
 
+    </canvas>
+    <h6 class="row justify-content-md-center">Question1</h6>
+    </td>
+    <td>
+    <canvas id="myChart2" >
+
+    </canvas>
+    <h6 class="row justify-content-md-center">Question2</h6>
+    </td><td>
+    <canvas id="myChart3" >
+
+    </canvas>
+    <h6 class="row justify-content-md-center">Question3</h6>
+    </td>
+    </tr>
+</table>
+<script>
+var ctx = 'myChart';
+var ctx2 = 'myChart2';
+var ctx3 = 'myChart3';
+
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['True','False',],
+        datasets: [{
+            label: 'Question1',
+            data: [<%= tf1T %>,<%= tf1F %>],
+            backgroundColor: [
+                'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',
+
+            ],
+            borderColor: [
+              'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',
+        
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        
+    }
+});
+
+var myChart2 = new Chart(ctx2, {
+    type: 'pie',
+    data: {
+        labels: ['True','False',],
+        datasets: [{
+            label: 'Question2',
+            data: [<%= tf2T %>,<%= tf2F %>],
+            backgroundColor: [
+                'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',
+            ],
+            borderColor: [
+              'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',         
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+});
+
+var myChart3 = new Chart(ctx3, {
+    type: 'pie',
+    data: {
+        labels: ['True','False',],
+        datasets: [{
+            label: 'Question3',
+            data: [<%= tf3T %>,<%= tf3F %>],
+            backgroundColor: [
+                'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',
+
+            ],
+            borderColor: [
+              'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',          
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+});
+</script>
+</div>
+
+<% }%> 
+<br><br>
 <a href="/survey-list" class="btn btn-outline-secondary">
 <i class="fas fa-undo"></i> Back </a>
 
