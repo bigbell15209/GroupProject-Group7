@@ -1,0 +1,153 @@
+<%- include ../partials/header.ejs %>
+
+<!-- Main Navigation -->
+  <nav class="navbar navbar-expand-lg" id="navcolor">
+  <a class="navbar-brand" href="/home" style="color: #453D30; font-family: Garamond; font-size: 35px;">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="../../Assets/images/Logo3.png" alt="Logo" width="60" height="60" >
+   <b>K Survey</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+
+
+      <% if (title == "Eunbee Lee"){ %> 
+      <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/home" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-home"></i>&nbsp; Home &nbsp;</a>
+      </li>
+
+      <% if (title == "About Me"){ %> 
+      <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/about" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="far fa-lg fa-address-card"></i>&nbsp; About Us &nbsp;</a>
+      </li>
+
+      <% if (title == "Contacts"){ %> 
+      <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/survey-list" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-poll-h"></i>&nbsp; Manage Survey &nbsp;</a>
+      </li>
+
+
+      <% if (title == "Contact Me"){ %> 
+      <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/contact" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-envelope-open-text"></i>&nbsp; Contact &nbsp;</a>
+      </li>
+
+      <% if(typeof displayName == 'string' && displayName) {%>
+            <li class="navbar-text" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+            <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
+              <a class="nav-link" href="/logout"><i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
+            </li>
+          <% } else { %>
+            <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
+              <a class="nav-link" href="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
+            </li>
+          <% } %>
+      
+  </div>
+</nav>
+
+
+<!-- Main Content -->
+<div id="partbody">
+  <div class="row justify-content-md-center">
+  <div class="col-8">
+  <br>
+  <h2 class="display-3 text-center" style="color:#453D30; font-family: Garamond;">Participate Survey</h2>
+  <hr class="my-4">
+  </div>
+  </div>
+  <br>
+  <div class="row justify-content-md-center">
+  <div class="col-md-offset-3 col-md-8">
+
+  <form class="form" method="POST">
+
+      <div class="form-group">
+      <label for="titleTextField" style="color:#453D30; font-family: Garamond;"><h3><b>Survey Title:</b></h3></label>
+
+      <input type="text" class="form-control" id="titleTextField" style="background-color:#453D30; color:white;" 
+      name="title" 
+      value="<%= SurveyList.title %>"
+      readonly>
+      <br>
+      
+
+      
+     
+   <table class="table table-bordered table-striped table-hover" style="background-color: #DEE7E6">
+     <!-- Header Row -->
+     <tr style="color:#453D30; font-family: Garamond;">
+     <th class="text-center " width="100px;">No.</th>
+     <th class="text-center ">Question</th>
+     <th class="text-center " width="250px;">Answer</th>
+     </tr>
+
+     <!-- Repeatable Template Row -->
+         
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList.question1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">
+              <input type="radio" id="true" name="tf" value="true">
+              <label for="true">True</label>
+              <input type="radio" id="false" name="tf" value="false">
+              <label for="false">False</label>
+         </td>
+         </tr>
+
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList.question2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">
+              <input type="radio" id="true" name="tf2" value="true">
+              <label for="true">True</label>
+              <input type="radio" id="false" name="tf2" value="false">
+              <label for="false">False</label>
+         </td>
+         </tr>
+
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList.question3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">
+              <input type="radio" id="true" name="tf3" value="true">
+              <label for="true">True</label>
+              <input type="radio" id="false" name="tf3" value="false">
+              <label for="false">False</label>
+         </td>
+         </tr>
+
+
+   </table>
+
+  <button type="submit" class="btn" style="background-color:#AD6D52; color:white; font-family: Garamond; font-size: 20px"><b>Submit</b></button>
+  <a href="/" class="btn" style="background-color:#A8A07C; color:white; font-family: Garamond; font-size: 20px">
+      <i class="fas fa-undo" ></i><b> Back </b></a>
+      </div>
+
+  </form>
+
+
+  </div>
+  </div>
+
+  </main>
+
+</div>    
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

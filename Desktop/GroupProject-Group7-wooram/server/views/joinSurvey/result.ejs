@@ -1,0 +1,178 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<div class="row justify-content-md-center">
+  <div class="col-8">
+    <h2 class="display-3 text-center">Result of Survey</h2>
+    <hr class="my-4">
+  </div>
+</div>
+<br>
+
+<div class="row justify-content-md-center">
+<div class="col-md-offset-3 col-md-8">
+
+
+<h5>Title: <%= ResultList[0].title %></h5>
+
+
+<table class="table table-bordered table-striped table-hover">         
+
+          <!-- Header Row -->
+          <tr>
+          <th class="text-center ">No.</th>
+          <th class="text-center ">Number of True</th>
+          <th class="text-center ">Number of False</th>
+          <th class="text-center ">Number of Participants</th>
+          </tr>
+
+<% {
+       let tf1T = 0;
+       let tf1F = 0;
+       let tf2T = 0;
+       let tf2F = 0;
+       let tf3T = 0;
+       let tf3F = 0;
+       let numParticipants = ResultList.length;
+       for(let count = 0; count < ResultList.length; count++) { 
+       if(ResultList[count].tf1==="true"){tf1T += 1;}
+       else if(ResultList[count].tf1==="false"){tf1F += 1;}
+       if(ResultList[count].tf2==="true"){tf2T += 1;}
+       else if(ResultList[count].tf2==="false"){tf2F += 1;}
+       if(ResultList[count].tf3==="true"){tf3T += 1;}
+       else if(ResultList[count].tf3==="false"){tf3F += 1;}
+       else {console.log('error in calculation TF');} }%>
+
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf1T %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf1F %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= numParticipants %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         </tr>
+
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf2T %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf2F %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= numParticipants %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         </tr>
+
+         <tr>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf3T %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf3F %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= numParticipants %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         </tr>
+
+</table>
+
+<br><br>
+<div class="row justify-content-md-center">
+<table class="row justify-content-md-center">
+    <tr>
+    <td>
+    <canvas id="myChart" >
+
+    </canvas>
+    <h6 class="row justify-content-md-center">Question1</h6>
+    </td>
+    <td>
+    <canvas id="myChart2" >
+
+    </canvas>
+    <h6 class="row justify-content-md-center">Question2</h6>
+    </td><td>
+    <canvas id="myChart3" >
+
+    </canvas>
+    <h6 class="row justify-content-md-center">Question3</h6>
+    </td>
+    </tr>
+</table>
+<script>
+var ctx = 'myChart';
+var ctx2 = 'myChart2';
+var ctx3 = 'myChart3';
+
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['True','False',],
+        datasets: [{
+            label: 'Question1',
+            data: [<%= tf1T %>,<%= tf1F %>],
+            backgroundColor: [
+                'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',
+
+            ],
+            borderColor: [
+              'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',
+        
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        
+    }
+});
+
+var myChart2 = new Chart(ctx2, {
+    type: 'pie',
+    data: {
+        labels: ['True','False',],
+        datasets: [{
+            label: 'Question2',
+            data: [<%= tf2T %>,<%= tf2F %>],
+            backgroundColor: [
+                'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',
+            ],
+            borderColor: [
+              'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',         
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+});
+
+var myChart3 = new Chart(ctx3, {
+    type: 'pie',
+    data: {
+        labels: ['True','False',],
+        datasets: [{
+            label: 'Question3',
+            data: [<%= tf3T %>,<%= tf3F %>],
+            backgroundColor: [
+                'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',
+
+            ],
+            borderColor: [
+              'rgba(155, 226, 239, 1)',
+                'rgba(260, 229, 232, 1)',          
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+});
+</script>
+</div>
+
+<% }%> 
+<br><br>
+<a href="/survey-list" class="btn btn-outline-secondary">
+<i class="fas fa-undo"></i> Back </a>
+
+</div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

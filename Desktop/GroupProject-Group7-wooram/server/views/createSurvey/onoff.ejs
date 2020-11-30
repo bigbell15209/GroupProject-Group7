@@ -1,0 +1,30 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<form class="form" method="POST">
+
+    <div class="form-group">
+        <label for="questionTypeTextField">Checkout to decide whether or not to show the Survey on Page </label>
+        <br>
+        <input type="radio" class="" id="onOff" 
+        name="onOff" value="true" checked required> 
+        <label for="onOff">On</label>
+        <input type="radio" class="" id="onOff" 
+        name="onOff" value="false" checked required> 
+        <label for="onOff">Off</label>
+    </div>
+    
+    <br>
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+    &nbsp;
+    <a href="/survey-list" class="btn btn-outline-secondary">
+    <i class="fas fa-undo"></i> Back </a>
+</form>
+    
+
+    
+    
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>
