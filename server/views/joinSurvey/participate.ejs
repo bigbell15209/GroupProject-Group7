@@ -1,12 +1,73 @@
 <%- include ../partials/header.ejs %>
-<%- include ../partials/main_nav.ejs %>
+
+<!-- Main Navigation -->
+  <nav class="navbar navbar-expand-lg" id="navcolor">
+  <a class="navbar-brand" href="/home" style="color: #453D30; font-family: Garamond; font-size: 35px;">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="../../Assets/images/Logo3.png" alt="Logo" width="60" height="60" >
+   <b>K Survey</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
 
 
-<br><br><br><br>
+      <% if (title == "Eunbee Lee"){ %> 
+      <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/home" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-home"></i>&nbsp; Home &nbsp;</a>
+      </li>
+
+      <% if (title == "About Me"){ %> 
+      <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/about" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="far fa-lg fa-address-card"></i>&nbsp; About Us &nbsp;</a>
+      </li>
+
+      <% if (title == "Contacts"){ %> 
+      <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/survey-list" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-poll-h"></i>&nbsp; Manage Survey &nbsp;</a>
+      </li>
+
+
+      <% if (title == "Contact Me"){ %> 
+      <li class="nav-item active">
+      <% } else { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/contact" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-envelope-open-text"></i>&nbsp; Contact &nbsp;</a>
+      </li>
+
+      <% if(typeof displayName == 'string' && displayName) {%>
+            <li class="navbar-text" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+            <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
+              <a class="nav-link" href="/logout"><i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
+            </li>
+          <% } else { %>
+            <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
+              <a class="nav-link" href="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
+            </li>
+          <% } %>
+      
+  </div>
+</nav>
+
+
 <!-- Main Content -->
+<div id="partbody">
   <div class="row justify-content-md-center">
   <div class="col-8">
-  <h2 class="display-3 text-center">Participate Survey</h2>
+  <br>
+  <h2 class="display-3 text-center" style="color:#453D30; font-family: Garamond;">Participate Survey</h2>
   <hr class="my-4">
   </div>
   </div>
@@ -17,9 +78,9 @@
   <form class="form" method="POST">
 
       <div class="form-group">
-      <label for="titleTextField"><h3>Survey Title:</h3></label>
+      <label for="titleTextField" style="color:#453D30; font-family: Garamond;"><h3><b>Survey Title:</b></h3></label>
 
-      <input type="text" class="form-control" id="titleTextField" 
+      <input type="text" class="form-control" id="titleTextField" style="background-color:#453D30; color:white;" 
       name="title" 
       value="<%= SurveyList.title %>"
       readonly>
@@ -28,12 +89,12 @@
 
       
      
-   <table class="table table-bordered table-striped table-hover">
+   <table class="table table-bordered table-striped table-hover" style="background-color: #DEE7E6">
      <!-- Header Row -->
-     <tr>
-     <th class="text-center ">No.</th>
+     <tr style="color:#453D30; font-family: Garamond;">
+     <th class="text-center " width="100px;">No.</th>
      <th class="text-center ">Question</th>
-     <th class="text-center ">Answer</th>
+     <th class="text-center " width="250px;">Answer</th>
      </tr>
 
      <!-- Repeatable Template Row -->
@@ -74,9 +135,9 @@
 
    </table>
 
-  <button type="submit" class="btn btn-outline-primary">Submit</button>
-  <a href="/" class="btn btn-outline-secondary">
-      <i class="fas fa-undo"></i> Back </a>
+  <button type="submit" class="btn" style="background-color:#AD6D52; color:white; font-family: Garamond; font-size: 20px"><b>Submit</b></button>
+  <a href="/" class="btn" style="background-color:#A8A07C; color:white; font-family: Garamond; font-size: 20px">
+      <i class="fas fa-undo" ></i><b> Back </b></a>
       </div>
 
   </form>
@@ -86,9 +147,7 @@
   </div>
 
   </main>
-<br><br><br><br>
 
-    
-
+</div>    
 <%- include ../partials/bottom_nav.ejs %>
 <%- include ../partials/footer.ejs %>

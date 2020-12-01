@@ -38,6 +38,11 @@ router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
 // post route for processing edit page - update operation
 router.post('/edit/:id', requireAuth, surveyController.processingEditPage);
 
+router.get('/onoff/:id', requireAuth, surveyController.displayOnOffPage);
+router.post('/onoff/:id', requireAuth, surveyController.processingOnOffPage);
+
+
+
 // get to perform deletion - delete operation
 router.get('/delete/:id', requireAuth, surveyController.performDeletion);
 
