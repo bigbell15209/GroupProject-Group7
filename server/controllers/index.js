@@ -144,7 +144,7 @@ module.exports.processContactPage = (req, res, next) => {
           res.end(err);
       }else{
           // refresh the book list
-          res.redirect('/contact');
+          res.redirect('/');
       }
     });
 }

@@ -37,6 +37,8 @@ router.get('/home', indexController.displayHomePage);
 /* GET About Me page. */
 router.get('/about', indexController.displayAboutPage);
 
+/* Contact */
+
 /* GET Contact Me page. */
 router.get('/contact', requireAuth,indexController.displayContactMePage);
 /* GET Processing contact page. */
