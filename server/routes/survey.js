@@ -53,4 +53,6 @@ router.get('/setting/:id', requireAuth, surveyController.displaySettingPage);
 router.post('/setting/:id', requireAuth, surveyController.processingSettingPage);
 
 
+
+
 module.exports = router;

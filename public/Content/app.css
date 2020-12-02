@@ -1,3 +1,4 @@
+
 /*Custom css goes here*/
 
 #navcolor
@@ -104,3 +105,82 @@
 {
     background-color: white;
 }
+
+#photo
+{
+  width: 100px; height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+
+#btnDetails
+{
+  background-color: #A98B80;
+  border-color: #A98B80;
+}
+
+#btnAdd
+{
+  background-color: #A98B80;
+  border-color: #A98B80;
+}
+
+#forms
+{
+  width:600px;
+  height:auto;
+  margin:50px auto 0;
+  padding:50px;
+  background-color:#EEE;
+  color:#333;
+  border:2px solid #C2D6FF;
+  border-radius:40px 0 40px 0
+}
+
+#btnColor
+{
+  background-color: #A98B80;
+  border-color: #A98B80;
+}
+/*https://www.formget.com/different-form-styles-using-html-css3/*/
+
+.overlay-container-center{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+line-1{
+  position: relative;
+  top: 50%;  
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
+}
+
+
+
+
+
+

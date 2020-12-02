@@ -1,5 +1,5 @@
 
-
+// modules required for routing
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -9,12 +9,13 @@ let mongoose = require('mongoose');
 // create a reference to the model
 let Survey = require('../models/survey');
 let Title = require('../models/result');
+const { disable } = require('debug');
 
 
 
-
+/* GET Survey List page. READ */
 module.exports.displaySurveyList = (req, res, next) => {
- 
+   // find surveylist in the survey collection
     Survey.find({creator: req.user._id},(err, surveyList) => {
         if(err){
             return console.error(err);
