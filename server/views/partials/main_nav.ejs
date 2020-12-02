@@ -50,7 +50,13 @@
             <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
               <a class="nav-link" href="/logout"><i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
             </li>
-          <% } else { %>
+          <%} else if(typeof username=='string' && username==admin) {%> 
+            <li class="navbar-text" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-user"></i> Welcome, <%= username %></li>
+            <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
+              <a class="nav-link" href="/logout"><i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
+              <a class="nav-link" href="/message"><i class="fas fa-envelope-open-text"> Messages </i>
+            </li>
+          <%} else { %>
             <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
               <a class="nav-link" href="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
             </li>

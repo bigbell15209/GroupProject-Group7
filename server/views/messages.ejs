@@ -1,0 +1,37 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+
+
+<div id="w5">
+    <br>
+    <h1 class="position-relative p-3 p-md-1 m-md-5 text-center background4 text1" style="color:#453D30; font-family: Garamond;">Message List</h1>
+      <div class="container">
+          <div class="row">
+        
+      <table class="table table-bordered table-striped table-hover">
+          <!-- Header Row -->
+          <tr style="color:#453D30">
+          <th class="text-center ">Full Name</th>
+          <th class="text-center ">Contact Number</th>
+          <th class="text-center ">Email address</th>
+          <th class="text-center ">Message</th>
+          </tr>
+    
+          <!-- Repeatable Template Row -->
+          <% for(let count = 0; count < MessageList.length; count++) { %>
+              <tr style="background-color:white; color:#453D30;">
+                <td class="text-center "width="150px;">&nbsp;&nbsp;&nbsp;&nbsp;<%= count + 1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;<%= MessageList[count].fullName %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td class="text-center" width="200px;">&nbsp;&nbsp;&nbsp;&nbsp;<%= MessageList[count].contactNumber %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td class="text-center" width="200px;">&nbsp;&nbsp;&nbsp;&nbsp;<%= MessageList[count].emailAddress %>&nbsp;&nbsp;&nbsp;&nbsp;</td>     
+                <td width="200px;">&nbsp;&nbsp;&nbsp;&nbsp;<%= MessageList[count].message %>&nbsp;&nbsp;&nbsp;&nbsp;</td>     
+              </tr>
+          <% } %>
+        </table>
+    
+      </div>
+      </div>
+    </div>
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
