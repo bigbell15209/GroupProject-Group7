@@ -152,7 +152,7 @@ module.exports.processContactPage = (req, res, next) => {
 /* GET Message List page. READ */
 module.exports.displayMessagesList = (req, res, next) => {
     // find messages in the message collection
-    Message.find({fullName: req.user.fullName},(err, messageList) => {
+    Message.find({},(err, messageList) => {
          if(err){
              return console.error(err);
          }else{
@@ -163,7 +163,21 @@ module.exports.displayMessagesList = (req, res, next) => {
              displayName: req.user ? req.user.displayName : ''});
          }
      });
- }
+}
+
+module.exports.deleteMessage = (req, res, next) => {
+
+    Message.remove({}, (err) => {
+    if(err){
+        console.log(err);
+        res.end(err);
+    }else{
+        // refresh the user list
+        res.redirect('/message');
+    }
+    });
+
+}
 
 
 
