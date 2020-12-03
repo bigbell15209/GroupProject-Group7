@@ -167,12 +167,13 @@ module.exports.displayMessagesList = (req, res, next) => {
 
 module.exports.deleteMessage = (req, res, next) => {
 
-    Message.remove({}, (err) => {
+    let id = req.params.id; 
+
+    Message.remove({_id: id}, (err) => {
     if(err){
         console.log(err);
         res.end(err);
     }else{
-        // refresh the user list
         res.redirect('/message');
     }
     });

@@ -44,7 +44,7 @@ router.get('/contact', requireAuth,indexController.displayContactMePage);
 router.post('/contact', requireAuth,indexController.processContactPage );
 /* GET Contact List page. */
 router.get('/message', requireAuth,indexController.displayMessagesList);
-router.get('/message/delete', requireAuth, indexController.deleteMessage);
+router.get('/message/delete/:id', requireAuth, indexController.deleteMessage);
 
 
 
