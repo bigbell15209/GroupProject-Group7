@@ -17,7 +17,6 @@ function requireAuth(req, res, next)
 }
 
 
-//j
 function boardDisable(req, res, next)
 {
     if(click.disable())
@@ -36,10 +35,19 @@ router.get('/home', indexController.displayHomePage);
 
 /* GET About Me page. */
 router.get('/about', indexController.displayAboutPage);
-/* GET Projects page. */
+
+/* Contact */
 
 /* GET Contact Me page. */
-router.get('/contact', indexController.displayContactMePage);
+router.get('/contact', requireAuth,indexController.displayContactMePage);
+/* GET Processing contact page. */
+router.post('/contact', requireAuth,indexController.processContactPage );
+/* GET Contact List page. */
+router.get('/message', requireAuth,indexController.displayMessagesList);
+router.get('/message/delete/:id', requireAuth, indexController.deleteMessage);
+
+
+
 
 // get route for displaying Login page 
 router.get('/login', indexController.displayLoginPage);

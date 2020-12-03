@@ -10,6 +10,7 @@ let Visitor = visitorModel.Visitor; // alias
 let Result = require('../models/result');
 let Survey = require('../models/survey');
 
+let Message = require('../models/message');
 
 module.exports.displayHomePage = (req, res, next) => {
 
@@ -105,7 +106,7 @@ module.exports.displayResultPage = (req, res, next) => {
 }
 
 
-//jiye
+
 
 
 
@@ -116,10 +117,77 @@ module.exports.displayAboutPage = (req, res, next) => {
 }
 
 
+
+
+
+
+
+
+
 module.exports.displayContactMePage = (req, res, next) => {
-    res.render('contact',{ title: 'Contact Us',
-    displayName: req.user ? req.user.displayName : ''});
+    res.render('contact',{ 
+        title: 'Contact Us',
+        displayName: req.user ? req.user.displayName : ''});
 }
+module.exports.processContactPage = (req, res, next) => {
+    let newMessage = Message({
+ 
+       "fullName" : req.body.fullName,
+       "contactNumber" : req.body.contactNumber,
+       "emailAddress" : req.body.emailAddress,
+       "message" : req.body.message
+    });
+
+    Message.create(newMessage, (err, Message) => {
+      if(err){
+          console.log(err);
+          res.end(err);
+      }else{
+          // refresh the book list
+          res.redirect('/');
+      }
+    });
+}
+
+/* GET Message List page. READ */
+module.exports.displayMessagesList = (req, res, next) => {
+    // find messages in the message collection
+    Message.find({},(err, messageList) => {
+         if(err){
+             return console.error(err);
+         }else{
+ 
+             res.render('messages', 
+             {title: 'Message List', 
+             MessageList: messageList,
+             displayName: req.user ? req.user.displayName : ''});
+         }
+     });
+}
+
+module.exports.deleteMessage = (req, res, next) => {
+
+    let id = req.params.id; 
+
+    Message.remove({_id: id}, (err) => {
+    if(err){
+        console.log(err);
+        res.end(err);
+    }else{
+        res.redirect('/message');
+    }
+    });
+
+}
+
+
+
+
+
+
+
+
+
 
 module.exports.displayLoginPage = (req, res, next) => {
     // check if the user is already logged in

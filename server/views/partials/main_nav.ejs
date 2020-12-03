@@ -42,15 +42,22 @@
       <% } else { %>
       <li class="nav-item">
       <% } %>
-        <a class="nav-link" href="/contact" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-envelope-open-text"></i>&nbsp; Contact &nbsp;</a>
+        <a class="nav-link" href="/contact" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-envelope"></i></i>&nbsp; Contact &nbsp;</a>
       </li>
+
+      <% if (typeof displayName == 'string' && displayName === 'admin'){ %> 
+      <li class="nav-item active"> 
+      <a class="nav-link" href="/message" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-envelope-open-text"></i>&nbsp; Message &nbsp;</a>
+       </li>
+      <% } %>
+
 
       <% if(typeof displayName == 'string' && displayName) {%>
             <li class="navbar-text" style="color: #453D30; font-family: Garamond; font-size: 20px;"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
             <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
               <a class="nav-link" href="/logout"><i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
             </li>
-          <% } else { %>
+          <%} else { %>
             <li class="nav-item active" style="color: #453D30; font-family: Garamond; font-size: 20px;">
               <a class="nav-link" href="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
             </li>
