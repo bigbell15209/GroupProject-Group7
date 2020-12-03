@@ -159,8 +159,8 @@ module.exports.displayMessagesList = (req, res, next) => {
  
              res.render('messages', 
              {title: 'Message List', 
-             MessageList: messageList, 
-             fullName: req.user ? req.user.fullName : '',});
+             MessageList: messageList,
+             displayName: req.user ? req.user.displayName : ''});
          }
      });
  }
