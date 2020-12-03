@@ -51,12 +51,30 @@ function Start()
 
     let deleteButtons = document.querySelectorAll('.btn-outline-danger')
 
+    let sendButtons = document.getElementById('sendButton')
+
     for(button of deleteButtons)
     {
        button.addEventListener('click', (event)=>{
            if(!confirm("Are you sure?")){
                event.preventDefault();
-               window.location.assign('/survey-list');
+               window.location.assign('/');
+           }
+           else{
+                window.location.assign('/');
+           }
+       });
+    }
+
+    for(button of sendButtons)
+    {
+       button.addEventListener('click', (event)=>{
+           if(!confirm("Message sent successfully")){
+               event.preventDefault();
+               window.location.assign('/');
+           }
+           else{
+                window.location.assign('/');
            }
        });
     }
