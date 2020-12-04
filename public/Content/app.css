@@ -125,6 +125,11 @@
   background-color: #A98B80;
   border-color: #A98B80;
 }
+#btnEdit
+{
+  background-color: #A98B80;
+  border-color: #A98B80;
+}
 
 #forms
 {
@@ -138,11 +143,6 @@
   border-radius:40px 0 40px 0
 }
 
-#btnColor
-{
-  background-color: #A98B80;
-  border-color: #A98B80;
-}
 /*https://www.formget.com/different-form-styles-using-html-css3/*/
 
 .overlay-container-center{
@@ -330,5 +330,5 @@ ul li.liAddproperties:nth-child(3n) a{
 #btnSlide {
 
 
-  border-color: white;
+  border-color: #EEE1D9;
 }
