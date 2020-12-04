@@ -150,11 +150,24 @@
 }
 #contact2
 {
+  position:absolute;
+  left:65%;
   font-size: 160%;
 }
 #contact3
 {
   font-size: 90%;
+}
+#contactq1
+{
+  position:absolute;
+  left:-25%;
+  top:-100%;
+}
+#contactq2
+{
+  position:relative;
+  left:-20%;
 }
 #manage1
 {
@@ -167,6 +180,12 @@
 #manage3
 {
   font-size: 140%;
+}
+#manage4
+{
+  position:absolute;
+  top:10%;
+  text-align: center;
 }
 /*https://www.formget.com/different-form-styles-using-html-css3/*/
 
