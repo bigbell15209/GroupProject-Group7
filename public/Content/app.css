@@ -128,13 +128,13 @@
 
 #forms
 {
-  width:600px;
+  width:1000px;
   height:auto;
   margin:50px auto 0;
   padding:50px;
-  background-color:#EEE;
+  background-color:#d3aea0;
   color:#333;
-  border:2px solid #C2D6FF;
+  border:2px solid #8f766e;
   border-radius:40px 0 40px 0
 }
 
@@ -325,4 +325,10 @@ ul li.liAddproperties:nth-child(3n) a{
   position:relative;
   top:-5px; */
   background:#ccf;
+}
+
+#btnSlide {
+
+
+  border-color: white;
 }
