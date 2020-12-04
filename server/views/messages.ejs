@@ -1,28 +1,27 @@
 <%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
 
+  <div id="w5" class="centerNote">
+      <h1 class="position-relative p-3 p-md-1 m-md-5 text-center background4 text1" style="color:#453D30; font-family: Garamond;">Message List</h1>
+        <div>
 
-<div id="w5">
-    <h1 class="position-relative p-3 p-md-1 m-md-5 text-center background4 text1" style="color:#453D30; font-family: Garamond;">Message List</h1>
-      <div class="container">
-          
+          <ul class="ulInMessageforstyle ulforOverflowPadding">
+            <% for(let count = 0; count < MessageList.length; count++) { %>
+              <li class="liInMessageforstyle liformarginFloat liAddproperties">
+                <a href="/message/delete/<%= MessageList[count]._id %>" class="aInMessage aforBackground aRotate aHover aFocus aTransition aColar">
+                  <h2 class="h2InMessage h2forPB"><%= count + 1 %>. <%= MessageList[count].fullName %></h2>
+                  <p class="pInMessage pforFontAndSize"><%= MessageList[count].message %></p>
+                  <p class="btn btn-outline-danger btn-sm" role="button"><i class="far fa-trash-alt"></i> Delete </p> 
+                </a>
+              </li>
+            <% } %>
             
-        <% for(let count = 0; count < MessageList.length; count++) { %>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><%= count + 1 %>. <%= MessageList[count].fullName %></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= MessageList[count].contactNumber %></h6>
-            <h6 class="card-subtitle mb-2 text-muted"><%= MessageList[count].emailAddress %></h6>
-            <p class="card-text"><%= MessageList[count].message %></p>
-            <a href="/message/delete/<%= MessageList[count]._id %>" class="btn btn-outline-danger btn-sm" role="button"><i class="far fa-trash-alt"></i> Delete </a>
-          </div>
+          </ul>
+
+        
+      
+
         </div>
-        <br>
-        <% } %>
-    
-
-      </div>
-</div>
-
+  </div>
 <%- include partials/bottom_nav.ejs %>
 <%- include partials/footer.ejs %>
