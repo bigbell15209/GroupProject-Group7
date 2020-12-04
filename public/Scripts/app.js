@@ -51,6 +51,7 @@ function Start()
 
     let deleteButtons = document.querySelectorAll('.btn-outline-danger')
 
+
     for(button of deleteButtons)
     {
        button.addEventListener('click', (event)=>{
@@ -60,6 +61,7 @@ function Start()
            }
        });
     }
+
 
     if(document.title === "Login" || document.title === "Register" || document.title === "result Survey")
     {
