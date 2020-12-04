@@ -144,6 +144,30 @@
   border-color: #A98B80;
   font-size: 20px;
 }
+#contact1
+{
+  font-size: 160%;
+}
+#contact2
+{
+  font-size: 160%;
+}
+#contact3
+{
+  font-size: 90%;
+}
+#manage1
+{
+  font-size: 140%;
+}
+#manage2
+{
+  font-size: 120%;
+}
+#manage3
+{
+  font-size: 140%;
+}
 /*https://www.formget.com/different-form-styles-using-html-css3/*/
 
 .overlay-container-center{

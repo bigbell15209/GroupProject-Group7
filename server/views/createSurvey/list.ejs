@@ -21,15 +21,15 @@
        <%let onAndOff = 'ON'; if(SurveyList[count].onOff === false){onAndOff = 'OFF';}%>  
        <form class="form" method="POST">
         
-        <table class="table table-bordered table-striped table-hover" style="color:#453D30; font-family: Garamond;">         
+        <table id ="manage1" class="table table-bordered table-striped table-hover" style="color:#453D30; font-family: Garamond;">         
 
           <!-- Header Row -->
           <br><br>
 
         <tr>
-         <td colspan="2" class="text-center "> <h5>Title: <%= SurveyList[count].title %></h5> </td>
-         <td class="text-center "> <h5>Creator: <%= SurveyList[count].writer %> </h5></td>
-         <td class="text-center "><h5 style="color:#453D30; font-family: Garamond;">Survey: <%= onAndOff%></h5></td>
+         <td colspan="2" class="text-center "> <h5 id ="manage2">Title: <%= SurveyList[count].title %></h5> </td>
+         <td class="text-center "> <h5 id ="manage2">Creator: <%= SurveyList[count].writer %> </h5></td>
+         <td class="text-center "><h5 id ="manage2" style="color:#453D30; font-family: Garamond;">Survey: <%= onAndOff%></h5></td>
 
 
        </tr>
@@ -79,9 +79,9 @@
 
 
   <a href="/survey-list/add" class="btn btn-secondary" role="button">
-  <i class="fas fa-plus-circle"></i> Create a Survey</a>
+  <i id="manage3" class="fas fa-plus-circle"></i> Create a Survey</a>
 
-  <button type="submit" class="btn btn-outline-primary">Submit</button>
+  <button id="manage3" type="submit" class="btn btn-outline-primary">Submit</button>
       </div>
 
   </form>
