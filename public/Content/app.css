@@ -150,24 +150,19 @@
 }
 #contact2
 {
-  position:absolute;
-  left:65%;
+  position:relative;
+  left:-20%;
   font-size: 160%;
 }
 #contact3
 {
   font-size: 90%;
 }
-#contactq1
+
+#contactword
 {
-  position:absolute;
-  left:-25%;
-  top:-100%;
-}
-#contactq2
-{
-  position:relative;
-  left:-20%;
+  font-size:400%;
+  font-family: Garamond;
 }
 #manage1
 {
@@ -181,11 +176,16 @@
 {
   font-size: 140%;
 }
-#manage4
+
+#manageword1
 {
-  position:absolute;
-  top:10%;
-  text-align: center;
+  font-family: Garamond;
+  font-size: 40px;
+}
+#manageword2
+{
+  font-family: Garamond;
+  font-size: 30px;
 }
 /*https://www.formget.com/different-form-styles-using-html-css3/*/
 
