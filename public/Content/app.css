@@ -125,6 +125,11 @@
   background-color: #A98B80;
   border-color: #A98B80;
 }
+#btnEdit
+{
+  background-color: #A98B80;
+  border-color: #A98B80;
+}
 
 #forms
 {
@@ -187,6 +192,12 @@
   font-family: Garamond;
   font-size: 30px;
 }
+#settingword
+{
+  font-size:70px;
+  text-align:center;
+  font-family: Garamond;
+}
 /*https://www.formget.com/different-form-styles-using-html-css3/*/
 
 .overlay-container-center{
@@ -222,7 +233,6 @@ to{width: 24em;}
 from{border-right-color: rgba(255,255,255,.75);}
 to{border-right-color: transparent;}
 }
-
 
 
 

@@ -2,20 +2,22 @@
 <%- include ../partials/main_nav.ejs %>
 
 <div class="row justify-content-md-center">
-  <div class="col-8">
-    <h2 class="display-3 text-center">Setting</h2>
-    <hr class="my-4">
-  </div>
-</div>
+<video class="w-100" width=20%; src="/Assets/videos/setting page.mp4" autoplay muted loop></video>
+  <div class="col-md-8 p-lg-5 mx-auto my-5 overlay-container-center text-left text-black">
+         <br><br><br><br><br>
+          <h1 id="settingword">
+     Setting
+          </h1>
+      </div>
 <br>
 
-<div class="row justify-content-md-center position-relative">
-<div class="col-md-offset-3 col-md-8">
+<div class="row justify-content-md-center">
+<div class="col-md-offset-3 col-md-15">
 
     <form class="form" method="POST">
 
-        <div class="row justify-content-md-center  position-relative" id="contact1">
-        <div class="col-lg-4">
+        <div class="row justify-content-md-center position-relative" id="contact1">
+        <div class="col-lg-5">
 <br><br>
         <h5>Survey ON/OFF: </h5>
         <%{if(setting.onOff === true){ %>
@@ -24,29 +26,24 @@
          <button class="btn btn-success" name="onAndOff" value="true" type="submit">Turn on the Survey</button>
         <%}}%>
         <br>
-        <br><br><br><br><br><br>
-        
-        <div class="col-lg-4">
-<a href="/survey-list" class="btn btn-outline-secondary">
+        <br><br>
+                
+        <div>
+        <br>
+        <div class="row justify-content-md-center position-relative">
+        <img width=500px; height= 450px; src="../../Assets/videos/on and off.gif">
+        </div>
+        <br>
+        <div class="col-lg-8">
+<a href="/survey-list" class="btn btn-outline-secondary justify-content-md-center position-relative">
         <i class="fas fa-undo"></i> Back </a>
         </div>
         
         </div>
-        
-        
-        
-        
-        <div>
-        <br>
-        <div class="col-lg-4 position-relative">
-        <img width=500px; height= 450px; src="../../Assets/videos/on and off.gif">
-        </div>
-        
-        
-        
+             
 
     </form>
-
+<br><br><br><br><br>
 </div>
 </div>
 
