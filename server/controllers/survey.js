@@ -87,6 +87,8 @@ module.exports.processingAddPage = (req, res, next) => {
 
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
+    let user = req.user.displayname;
+    console.log(user);
 
     Survey.findById(id, (err, surveyToEdit) => {
        if(err){
