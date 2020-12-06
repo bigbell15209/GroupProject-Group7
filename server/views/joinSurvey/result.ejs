@@ -36,6 +36,7 @@
        let tf3T = 0;
        let tf3F = 0;
        let numParticipants = ResultList.length;
+       let pdfTitle = ResultList[0].title;
        for(let count = 0; count < ResultList.length; count++) { 
        if(ResultList[count].tf1==="true"){tf1T += 1;}
        else if(ResultList[count].tf1==="false"){tf1F += 1;}
@@ -178,8 +179,9 @@ var myChart3 = new Chart(ctx3, {
 <script>
 
 var docDefinition = {
+    header: {text: 'Result of Survey', fontSize: 15, margin: [ 5, 10, 0, 10 ]},
     content: [
-        	{text: 'Result of Survey', style: 'header'},
+        	{text: '<%= pdfTitle %>', fontSize: 20, margin: [ 0, 10, 0, 20 ] },
             {
                 layout: 'lightHorizontalLines', // optional
                 table: {                
