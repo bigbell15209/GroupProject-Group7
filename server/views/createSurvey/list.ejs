@@ -5,12 +5,21 @@
 
 <br><br><br><br>
 <!-- Main Content -->
-  <div class="row justify-content-md-center">
-  <div class="col-8" style="color:#453D30; font-family: Garamond;">
-  <h2 class="display-3 text-center">Manage Survey</h2>
-  <hr class="my-4">
-  </div>
-  </div>
+<div class="position-relative text-center background4 text1">
+      <img src="../Assets/images/manage.jpg" width="65%" height="400px;">
+        <div class="col-md-8 p-lg-5 mx-auto my-5 overlay-container-center text-left text-white">
+          <h1 id="manageword1">
+     Manage Survey
+          </h1>
+          <h1 id="manageword2">
+     Edit / Delete / Result / Setting
+          </h1>
+      </div>
+    </div>
+
+
+
+
   <br>
   <div class="row justify-content-md-center">
   <div class="col-md-offset-3 col-md-8">
@@ -21,20 +30,16 @@
        <%let onAndOff = 'ON'; if(SurveyList[count].onOff === false){onAndOff = 'OFF';}%>  
        <form class="form" method="POST">
         
-        <table class="table table-bordered table-striped table-hover" style="color:#453D30; font-family: Garamond;">         
-
+        <table id ="manage1" class="table table-bordered table-striped table-hover" style="color:#453D30; font-family: Garamond;">         
           <!-- Header Row -->
           <br><br>
-
         <tr>
-         <td colspan="2" class="text-center "> <h5>Title: <%= SurveyList[count].title %></h5> </td>
-         <td class="text-center "> <h5>Creator: <%= SurveyList[count].writer %> </h5></td>
-         <td class="text-center "><h5 style="color:#453D30; font-family: Garamond;">Survey: <%= onAndOff%></h5></td>
-
-
+         <td colspan="2" class="text-center "> <h5 id ="manage2">Title: <%= SurveyList[count].title %></h5> </td>
+         <td class="text-center "> <h5 id ="manage2">Creator: <%= SurveyList[count].writer %> </h5></td>
+         <td class="text-center "><h5 id ="manage2" style="color:#453D30; font-family: Garamond;">Survey: <%= onAndOff%></h5></td>
        </tr>
           
-          <tr>
+          <tr style="background-color:white;">
           <th class="text-center ">No.</th>
           <th width="600px;" class="text-center ">Question</th>
           <th class="text-center ">Question Type</th>
@@ -53,36 +58,32 @@
           </tr>
          
          
-         <tr>
+         <tr style="background-color:white;">
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType1 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          </tr>
-
-         <tr>
+         <tr style="background-color:white;">
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType2 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          </tr>
-
-         <tr>
+         <tr style="background-color:white;">
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionNum3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].question3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= SurveyList[count].questionType3 %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
          </tr>
-
-
      <% } %>
 
    </table>
 
 
 
-  <a href="/survey-list/add" class="btn btn-secondary" role="button">
-  <i class="fas fa-plus-circle"></i> Create a Survey</a>
-
-  <button type="submit" class="btn btn-outline-primary">Submit</button>
-      </div>
+  <a href="/survey-list/add" class="btn" style="background-color:#AD6D52; color:white; font-family: Garamond; font-size: 20px"role="button">
+  <i id="manage3" class="fas fa-plus-circle"></i> Create a Survey</a>
+  <a href="/home" class="btn" style="background-color:#A8A07C; color:white; font-family: Garamond; font-size: 20px" role="button">
+  <i id="manage3" class="fas fa-arrow-circle-up"></i> Submit</a>
+  
 
   </form>
 
@@ -97,4 +98,3 @@
 
 <%- include ../partials/bottom_nav.ejs %>
 <%- include ../partials/footer.ejs %>
-

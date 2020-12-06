@@ -331,3 +331,68 @@ ul li.liAddproperties:nth-child(3n) a{
   top:-5px; */
   background:#ccf;
 }
+
+
+/* For Cantact, list and setting Pages by Hankyu */
+#btnColor
+{
+  background-color: #A98B80;
+  border-color: #A98B80;
+  font-size: 25px;
+}
+#btnColor1{
+  background-color: #A98B80;
+  border-color: #A98B80;
+  color:white;
+  font-family: Garamond;
+  font-size:20px;
+}
+#contact1
+{
+  font-size: 160%;
+}
+#contact2
+{
+  position:relative;
+  left:-20%;
+  font-size: 160%;
+}
+#contact3
+{
+  font-size: 25px;;
+}
+
+#contactword
+{
+  font-size:60px;
+  font-family: Garamond;
+}
+#manage1
+{
+  font-size: 140%;
+}
+#manage2
+{
+  font-size: 120%;
+}
+#manage3
+{
+  font-size: 140%;
+}
+
+#manageword1
+{
+  font-family: Garamond;
+  font-size: 40px;
+}
+#manageword2
+{
+  font-family: Garamond;
+  font-size: 30px;
+}
+#settingword
+{
+  font-size:70px;
+  text-align:center;
+  font-family: Garamond;
+}
