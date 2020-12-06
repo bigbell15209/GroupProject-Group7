@@ -173,7 +173,7 @@ var myChart3 = new Chart(ctx3, {
 <br><br>
 <a href="/survey-list" class="btn btn-outline-secondary">
 <i class="fas fa-undo"></i> Back </a>
-<button class="btn" id="myButton" style="color:white;"> Download </button>
+<button onclick="pdfDownload()" class="btn" id="myButton" style="color:white;"> Download </button>
 
 
 <script>
@@ -200,7 +200,9 @@ var docDefinition = {
     ]
 };
 
+function pdfDownload(){
 pdfMake.createPdf(docDefinition).download();
+};
 
 </script>
 <% }%> 
