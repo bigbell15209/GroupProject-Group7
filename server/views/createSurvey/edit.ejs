@@ -4,7 +4,7 @@
    <br><br><br><br>
   <div class="row justify-content-md-center">
     <div class="col-8">
-    <h2 class="display-4 text-center" style="font-family: Garamond;">Edit Question</h2>
+    <h2 class="display-4 text-center" style="font-family: Garamond;"><i class="fas fa-highlighter"></i> Edit Question</h2>
     <hr class="my-4">
     </div>
   </div>
@@ -17,23 +17,25 @@
       <form class="form" method="POST">
 
       <div class="form-group">
-      <label for="titleTextField">Title</label>
+        <table class="form">
+          <tr>
+            <td>
+
+        </table>
+      <label for="titleTextField" style = "font-size: 30px;">Title</label>
       <input type="text" class="form-control" id="titleTextField" 
       name="title" 
       value="<%= survey.title %>"
       required>
       </div>
-
+      <br>
+      <br>
       <div class="form-group">
-      <label for="questionNumTextField">Question Number</label>
-      <input type="number" class="form-control" id="questionNumTextField" 
-      name="questionNum1" 
-      value="<%= survey.questionNum1 %>"
-      required>
+  
       </div>
 
       <div class="form-group">
-      <label for="numberTextField">Question</label>
+        <img src="../../Assets/images/1.png" height="50" width="50"><label for="numberTextField" style = "font-size: 20px;">Question</label>
       <input type="text" class="form-control" id="questionTextField" 
       name="question1" 
       value="<%= survey.question1 %>"
@@ -47,17 +49,15 @@
       name="questionType1" value="<%= survey.questionType1 %>" checked required> 
       <label for="TF">True & False</label>
       </div>
+      <br>
+      <br>
 
       <div class="form-group">
-      <label for="questionNumTextField">Question Number</label>
-      <input type="number" class="form-control" id="questionNumTextField" 
-      name="questionNum2" 
-      value="<%= survey.questionNum2 %>"
-      required>
+
       </div>
 
       <div class="form-group">
-      <label for="numberTextField">Question</label>
+        <img src="../../Assets/images/2.png" height="50" width="50"><label for="numberTextField" style = "font-size: 20px;">Question</label>
       <input type="text" class="form-control" id="questionTextField" 
       name="question2" 
       value="<%= survey.question2 %>"
@@ -71,17 +71,15 @@
       name="questionType2" value="<%= survey.questionType2 %>" checked required> 
       <label for="TF">True & False</label>
       </div>
+<br>
+<br>
 
       <div class="form-group">
-      <label for="questionNumTextField">Question Number</label>
-      <input type="number" class="form-control" id="questionNumTextField" 
-      name="questionNum3" 
-      value="<%= survey.questionNum3 %>"
-      required>
+
       </div>
 
       <div class="form-group">
-      <label for="numberTextField">Question</label>
+        <img src="../../Assets/images/3.png" height="50" width="50"><label for="numberTextField" style = "font-size: 20px;">Question</label>
       <input type="text" class="form-control" id="questionTextField" 
       name="question3" 
       value="<%= survey.question3 %>"
@@ -98,9 +96,9 @@
 
       
       <br>
-      <button class="btn btn-outline-primary" type="submit">Submit</button>
+      <button class="btn btn-outline-primary" style="background-color:#AD6D52; color:white; border-color: #AD6D52; font-family: Garamond; font-size: 20px" type="submit">Submit</button>
       &nbsp;
-      <a href="/survey-list" class="btn btn-outline-secondary">
+      <a href="/survey-list" class="btn btn-outline-secondary" style="background-color:#A8A07C; color:white; border-color: #A8A07C; font-family: Garamond; font-size: 20px" >
       <i class="fas fa-undo"></i> Back </a>
 
       </form>

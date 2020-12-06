@@ -130,26 +130,25 @@
   background-color: #A98B80;
   border-color: #A98B80;
 }
-
-#forms
-{
-  width:600px;
-  height:auto;
-  margin:50px auto 0;
-  padding:50px;
-  background-color:#EEE;
-  color:#333;
-  border:2px solid #C2D6FF;
-  border-radius:40px 0 40px 0
-}
-
-#btnColor
+#btnEdit
 {
   background-color: #A98B80;
   border-color: #A98B80;
 }
-/*https://www.formget.com/different-form-styles-using-html-css3/*/
 
+#forms
+{
+  width:1000px;
+  height:auto;
+  margin:50px auto 0;
+  padding:50px;
+  background-color:#d3aea0;
+  color:#333;
+  border:2px solid #8f766e;
+  border-radius:40px 0 40px 0
+}
+
+/*https://www.formget.com/different-form-styles-using-html-css3/*/
 .overlay-container-center{
   position: absolute;
   top: 25%;
@@ -395,4 +394,10 @@ ul li.liAddproperties:nth-child(3n) a{
   font-size:70px;
   text-align:center;
   font-family: Garamond;
+}
+
+#btnSlide {
+
+
+  border-color: #EEE1D9;
 }

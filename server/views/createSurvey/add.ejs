@@ -4,7 +4,7 @@
   <br><br><br><br>
   <div class="row justify-content-md-center">
     <div class="col-8">
-    <h2 class="display-4 text-center" style="font-family: Garamond;">Add New Question</h2>
+    <h2 class="display-4 text-center" style="font-size: 60px; font-family: Garamond;"><i class="fas fa-plus"></i> Add New Question</h2>
     <hr class="my-4">
     </div>
   </div>
@@ -17,19 +17,29 @@
       <form class="form" method="POST">
 
       <div class="form-group">
-      <label for="titleTextField"> - Title</label>
+        <table class="form">
+          <tr>
+            <td>
+        </table>
+      <label for="titleTextField"  style = "font-size: 30px;">Title</label>
       <input type="ntext" class="form-control" id="titleTextField" 
-      name="title" placeholder="Enter the Title" required>
+      name="title" placeholder="Enter the Title." required style="width: 500px">
+                    
+    </td>
+  </tr>
+</table>
+      </div>
+<br>
+<br>
+      <div class="form-group">
+
+        <img src="../../Assets/images/1.png" height="50" width="50"><label for="titleTextField" style = "font-size: 20px;">Question</label>
       </div>
 
       <div class="form-group">
-      <label for="titleTextField"> - Question Number 1</label>
-      </div>
 
-      <div class="form-group">
-      <label for="questionTextField">Question</label>
       <input type="text" class="form-control" id="questionTextField" 
-      name="question" placeholder="Enter the Question." required>
+      name="question" placeholder="Enter the Question." required style="width: 500px">
       </div>
 
       <div class="form-group">
@@ -40,14 +50,18 @@
       <label for="TF">True & False</label>
       </div>
 
+      
+      <br>
+      <br>
+
       <div class="form-group">
-      <label for="titleTextField"> - Question Number 2</label>
+        <img src="../../Assets/images/2.png" height="50" width="50"><label for="titleTextField" style = "font-size: 20px;">Question</label>
       </div>
 
       <div class="form-group">
-      <label for="questionTextField">Question</label>
+  
       <input type="text" class="form-control" id="questionTextField" 
-      name="question2" placeholder="Enter the Question." required>
+      name="question2" placeholder="Enter the Question." required style="width: 500px">
       </div>
 
       <div class="form-group">
@@ -58,14 +72,17 @@
       <label for="TF">True & False</label>
       </div>
 
+      <br>
+      <br>
+
       <div class="form-group">
-      <label for="titleTextField"> - Question Number 3</label>
+        <img src="../../Assets/images/3.png" height="50" width="50"><label for="titleTextField" style = "font-size: 20px;">Question</label>
       </div>
 
       <div class="form-group">
-      <label for="questionTextField">Question</label>
+
       <input type="text" class="form-control" id="questionTextField" 
-      name="question3" placeholder="Enter the Question." required>
+      name="question3" placeholder="Enter the Question." required style="width: 500px">
       </div>
 
       <div class="form-group">
@@ -78,9 +95,9 @@
 
       
       <br>
-      <button type="submit" class="btn btn-outline-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-primary" style="background-color:#AD6D52; color:white; border-color: #AD6D52; font-family: Garamond; font-size: 20px">Submit</button>
       &nbsp;
-      <a href="/survey-list" class="btn btn-outline-secondary">
+      <a href="/survey-list" class="btn btn-outline-secondary" style="background-color:#A8A07C; color:white; border-color: #A8A07C; font-family: Garamond; font-size: 20px">
       <i class="fas fa-undo"></i> Back </a>
 
       </form>
