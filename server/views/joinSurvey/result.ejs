@@ -1,9 +1,10 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
 
+<br><br><br>
 <div class="row justify-content-md-center">
   <div class="col-8">
-    <p href="" class="typewrite text-center display-2 " data-period="2000" data-type='[ "Result", "Result", "Result", "Result" ]'>
+    <p href="" class="typewrite text-center display-1 " data-period="2000" data-type='[ "Result", "Result", "Result", "Result" ]'>
         <span class="wrap"></span>
     </p>
     <hr class="my-4">
@@ -171,14 +172,14 @@ var myChart3 = new Chart(ctx3, {
 
 
 <br><br>
-<a href="/survey-list" class="btn btn-outline-secondary">
+<a href="/survey-list" class="btn btn-outline-secondary" style="color:black;">
 <i class="fas fa-undo"></i> Back </a>
 <button onclick="pdfDownload()" class="btn" id="myButton" style="color:white;"> Download </button>
 
 
 <script>
 
-var docDefinition = {
+let docDefinition = {
     header: {text: 'Result of Survey', fontSize: 15, margin: [ 5, 10, 0, 10 ]},
     content: [
         	{text: '<%= pdfTitle %>', fontSize: 20, margin: [ 0, 10, 0, 20 ] },
@@ -206,6 +207,7 @@ pdfMake.createPdf(docDefinition).download();
 
 </script>
 <% }%> 
+
 </div>
 </div>
 
