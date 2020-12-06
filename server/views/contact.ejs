@@ -1,10 +1,8 @@
-
 <%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
-<br><br>
 
 <div class="position-relative text-center background4 text1">
-      <img src="../Assets/images/contact test.jpg" width="100%" height="400px;">
+      <img src="../Assets/images/contact us.jpg" width="100%" height="400px;">
         <div class="col-md-8 p-lg-5 mx-auto my-5 overlay-container-center text-left text-white">
          <br><br><br>
           <h1 id="contactword">
@@ -17,47 +15,38 @@
       </div>
     </div>
 
-
-
-
-
-<br><br><br><br>
-
-  <div class="row justify-content-md-center" id="contact1" style="color:#453D30; font-family: Garamond;">
-    <div class="col-lg-4 container">
-        <form>
+<br><br>
+<div class="container marketing">
+  <div class="row justify-content-md-center " id="contact1" style="color:#453D30; font-family: Garamond;">
+    <div class="col-lg-4">
+        <form class="form" method="POST">
         <div class="form-group">
         <label for="fullName">Full Name</label>
-        <input id ="contact3" type="text" class="form-control" id="fullName" aria-describedby="fullName" name="fullName" placeholder="Enter your full name." required>
+        <input type="text" class="form-control" id="fullName" aria-describedby="fullName" name="fullName" placeholder="Enter your full name." required>
         </div>
         <div class="form-group">
         <label for="contactNumber">Contact Number</label>
-        <input id ="contact3" type="tel" class="form-control" id="contactNumber" aria-describedby="contactNumber" name="contactNumber" placeholder="Enter your contact number." required>
+        <input type="tel" class="form-control" id="contactNumber" aria-describedby="contactNumber" name="contactNumber" placeholder="Enter your contact number." required>
         </div>
         <div class="form-group">
         <label for="emailAddress">Email address</label>
-        <input id ="contact3"  type="email" class="form-control" id="emailAddress" aria-describedby="emailAddress" name="emailAddress" placeholder="Enter your e-mail address." required>
+        <input type="email" class="form-control" id="emailAddress" aria-describedby="emailAddress" name="emailAddress" placeholder="Enter your e-mail address." required>
         </div>
         <div class="form-group">
         <label for="message">Your Message:</label>
-        <textarea id ="contact3" class="form-control" id="message" name="message" rows="5" placeholder="Ask anything you want to ask."></textarea>
+        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Ask anything you want to ask."></textarea>
         </div>
         <div class="row justify-content-around ">
-        <button id="btnColor" type="submit" class="btn background1 col-3"><h5>Send</h5></button>
-        <a class="btn background1 col-3" id="btnColor" href="/home">Cancel</a>
-        </div>
+        <button id="btnColor" type="submit" class="btn background1 col-3" id="sendButton"><h5>Send</h5></button>
+        <button id="btnColor" type="reset" class="btn background2 col-3" id="cancelButton"><h5>Cancel</h5></button>
+      
+        </div>      
         </form>
     </div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <div class="row justify-content-md-center" id="contact2">
-        <img width=600px; height= 600px; src="../Assets/images/contactus page2.jpg">
-
-
-
-
-  </div>
+    <div class="col-lg-4">
+        <img width=500px; height= 500px; src="../Assets/images/contact.png">
+         </div>
 </div>
-<br><br><br><br><br><br><br><br>
+</div>
 <%- include partials/bottom_nav.ejs %>
 <%- include partials/footer.ejs %>
