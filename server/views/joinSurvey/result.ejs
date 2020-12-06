@@ -47,9 +47,9 @@
 
          <tr>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf1T %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf1F %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= numParticipants %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center " id="t1"><%= tf1T %></td>
+         <td class="text-center " id="f1"><%= tf1F %></td>
+         <td class="text-center " id="np"><%= numParticipants %></td>
          </tr>
 
          <tr>
@@ -172,6 +172,33 @@ var myChart3 = new Chart(ctx3, {
 <br><br>
 <a href="/survey-list" class="btn btn-outline-secondary">
 <i class="fas fa-undo"></i> Back </a>
+<button class="btn"  style="color:white;"> Download </button>
+
+
+<script>
+
+var docDefinition = {
+    content: [
+        	{text: 'Result of Survey', style: 'header'},
+            {
+                layout: 'lightHorizontalLines', // optional
+                table: {                
+                        headerRows: 1,
+                        widths: [ '*', 'auto', 100, '*' ],
+
+                        body: [
+                        [ 'No.', 'Number of True', 'Number of False', 'Number of Participants' ],
+                        [ {text: '1', bold: true}, '1', '2', '3' ],
+                        ]
+                }
+            }
+
+    ]
+};
+
+pdfMake.createPdf(docDefinition).download();
+
+</script>
 
 </div>
 </div>
