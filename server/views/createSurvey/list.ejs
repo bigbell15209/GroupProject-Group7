@@ -1,9 +1,8 @@
-
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
 
 
-<br><br><br><br>
+<br>
 <!-- Main Content -->
 <div class="position-relative text-center background4 text1">
       <img src="../Assets/images/manage.jpg" width="65%" height="400px;">
@@ -18,9 +17,7 @@
     </div>
 
 
-
-
-  <br>
+  <br><br>
   <div class="row justify-content-md-center">
   <div class="col-md-offset-3 col-md-8">
      
@@ -30,7 +27,7 @@
        <%let onAndOff = 'ON'; if(SurveyList[count].onOff === false){onAndOff = 'OFF';}%>  
        <form class="form" method="POST">
         
-        <table id ="manage1" class="table table-bordered table-striped table-hover" style="color:#453D30; font-family: Garamond;">         
+        <table id ="manage1" class="table table-bordered table-striped table-hover" style="color:#453D30;">         
 
           <!-- Header Row -->
           <br><br>
@@ -38,7 +35,7 @@
         <tr>
          <td colspan="2" class="text-center "> <h5 id ="manage2">Title: <%= SurveyList[count].title %></h5> </td>
          <td class="text-center "> <h5 id ="manage2">Creator: <%= SurveyList[count].writer %> </h5></td>
-         <td class="text-center "><h5 id ="manage2" style="color:#453D30; font-family: Garamond;">Survey: <%= onAndOff%></h5></td>
+         <td class="text-center "><h5 id ="manage2" style="color:#453D30;">Survey: <%= onAndOff%></h5></td>
 
 
        </tr>
@@ -47,7 +44,7 @@
           <th class="text-center ">No.</th>
           <th width="600px;" class="text-center ">Question</th>
           <th class="text-center ">Question Type</th>
-          <th  width="180px;" rowspan="4"><br><a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
+          <th  width="200px;" rowspan="4"><br><a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
           <i class="far fa-edit"></i> Edit </a>&nbsp;&nbsp;
          <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-outline-danger btn-sm" role="button">
           <i class="far fa-trash-alt"></i> Delete </a>
@@ -87,10 +84,10 @@
 
 
 
-  <a href="/survey-list/add" class="btn" style="background-color:#AD6D52; color:white; font-family: Garamond; font-size: 20px"role="button">
-  <i id="manage3" class="fas fa-plus-circle"></i> Create a Survey</a>
-  <a href="/home" class="btn" style="background-color:#A8A07C; color:white; font-family: Garamond; font-size: 20px" role="button">
-  <i id="manage3" class="fas fa-arrow-circle-up"></i> Submit</a>
+  <a href="/survey-list/add" class="btn" style="background-color:#AD6D52; color:white; font-size: 25px"role="button">
+  <i id="manage3" class="fas fa-plus-circle fa-lg"></i> Create a Survey</a>
+  <a href="/home" class="btn" style="background-color:#A8A07C; color:white; font-size: 25px" role="button">
+  <i id="manage3" class="fas fa-arrow-circle-up fa-lg"></i> Submit</a>
   
 
   </form>
@@ -106,4 +103,3 @@
 
 <%- include ../partials/bottom_nav.ejs %>
 <%- include ../partials/footer.ejs %>
-
