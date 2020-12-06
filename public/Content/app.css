@@ -147,7 +147,14 @@
 {
   background-color: #A98B80;
   border-color: #A98B80;
-  font-size: 20px;
+  font-size: 25px;
+}
+#btnColor1{
+  background-color: #A98B80;
+  border-color: #A98B80;
+  color:white;
+  font-family: Garamond;
+  font-size:20px;
 }
 #contact1
 {
@@ -161,12 +168,12 @@
 }
 #contact3
 {
-  font-size: 90%;
+  font-size: 25px;;
 }
 
 #contactword
 {
-  font-size:400%;
+  font-size:60px;
   font-family: Garamond;
 }
 #manage1

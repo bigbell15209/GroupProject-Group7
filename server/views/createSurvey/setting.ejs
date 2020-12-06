@@ -19,11 +19,11 @@
         <div class="row justify-content-md-center position-relative" id="contact1">
         <div class="col-lg-5">
 <br><br>
-        <h5>Survey ON/OFF: </h5>
+        <h5 style="font-family: Garamond">Survey ON/OFF: </h5>
         <%{if(setting.onOff === true){ %>
-        <button class="btn btn-dark" name="onAndOff" value="false" type="submit">Turn off the Survey</button>
+        <button id="btnColor1" class="btn btn-dark" name="onAndOff" value="false" type="submit">Turn off the Survey</button>
         <%}if(setting.onOff === false){%>
-         <button class="btn btn-success" name="onAndOff" value="true" type="submit">Turn on the Survey</button>
+         <button id="btnColor1" class="btn btn-success" name="onAndOff" value="true" type="submit">Turn on the Survey</button>
         <%}}%>
         <br>
         <br><br>
@@ -35,8 +35,8 @@
         </div>
         <br>
         <div class="col-lg-8">
-<a href="/survey-list" class="btn btn-outline-secondary justify-content-md-center position-relative">
-        <i class="fas fa-undo"></i> Back </a>
+<a href="/survey-list" id="btnColor1" class="btn btn-outline-secondary justify-content-md-center position-relative">
+        <i class="fas fa-undo"></i> Back</a>
         </div>
         
         </div>
