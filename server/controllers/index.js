@@ -129,6 +129,7 @@ module.exports.displayContactMePage = (req, res, next) => {
         title: 'Contact Us',
         displayName: req.user ? req.user.displayName : ''});
 }
+
 module.exports.processContactPage = (req, res, next) => {
     let newMessage = Message({
  

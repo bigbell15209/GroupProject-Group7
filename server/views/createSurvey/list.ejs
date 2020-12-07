@@ -30,7 +30,7 @@
        <%let onAndOff = 'ON'; if(SurveyList[count].onOff === false){onAndOff = 'OFF';}%>  
        <form class="form" method="POST">
         
-        <table id ="manage1" class="table table-bordered table-striped table-hover" style="color:#453D30; font-family: Garamond;">         
+        <table id ="manage1" class="table table-bordered table-striped table-hover" style="color:#453D30;">         
           <!-- Header Row -->
           <br><br>
         <tr>
@@ -43,7 +43,7 @@
           <th class="text-center ">No.</th>
           <th width="600px;" class="text-center ">Question</th>
           <th class="text-center ">Question Type</th>
-          <th  width="180px;" rowspan="4"><br><a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
+          <th  width="200px;" rowspan="4"><br><a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-outline-primary btn-sm" role="button">
           <i class="far fa-edit"></i> Edit </a>&nbsp;&nbsp;
          <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-outline-danger btn-sm" role="button">
           <i class="far fa-trash-alt"></i> Delete </a>
