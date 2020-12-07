@@ -1,9 +1,10 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
 
+<br><br><br>
 <div class="row justify-content-md-center">
   <div class="col-8">
-    <p href="" class="typewrite text-center display-2 " data-period="2000" data-type='[ "Result", "Result", "Result", "Result" ]'>
+    <p href="" class="typewrite text-center display-1 " data-period="2000" data-type='[ "Result", "Result", "Result", "Result" ]'>
         <span class="wrap"></span>
     </p>
     <hr class="my-4">
@@ -36,6 +37,7 @@
        let tf3T = 0;
        let tf3F = 0;
        let numParticipants = ResultList.length;
+       let pdfTitle = ResultList[0].title;
        for(let count = 0; count < ResultList.length; count++) { 
        if(ResultList[count].tf1==="true"){tf1T += 1;}
        else if(ResultList[count].tf1==="false"){tf1F += 1;}
@@ -47,9 +49,9 @@
 
          <tr>
          <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf1T %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= tf1F %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td class="text-center ">&nbsp;&nbsp;&nbsp;&nbsp;<%= numParticipants %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="text-center " id="t1" value="<%= tf1T %>"><%= tf1T %></td>
+         <td class="text-center " id="f1"><%= tf1F %></td>
+         <td class="text-center " id="np"><%= numParticipants %></td>
          </tr>
 
          <tr>
@@ -168,10 +170,43 @@ var myChart3 = new Chart(ctx3, {
 </script>
 </div>
 
-<% }%> 
+
 <br><br>
-<a href="/survey-list" class="btn btn-outline-secondary">
+<a href="/survey-list" class="btn btn-outline-secondary" style="color:black;">
 <i class="fas fa-undo"></i> Back </a>
+<button onclick="pdfDownload()" class="btn" id="myButton" style="color:white;"> Download </button>
+
+
+<script>
+
+let docDefinition = {
+    header: {text: 'Result of Survey', fontSize: 15, margin: [ 5, 10, 0, 10 ]},
+    content: [
+        	{text: '<%= pdfTitle %>', fontSize: 20, margin: [ 0, 10, 0, 20 ] },
+            {
+                layout: 'lightHorizontalLines', // optional
+                table: {                
+                        headerRows: 1,
+                        widths: [ '*', 'auto', 100, '*' ],
+
+                        body: [
+                        [ 'No.', 'Number of True', 'Number of False', 'Number of Participants' ],
+                        [ {text: '1', bold: true}, <%= tf1T %>, <%= tf1F %>, <%= numParticipants %> ],
+                        [ {text: '2', bold: true}, <%= tf2T %>, <%= tf2F %>, <%= numParticipants %> ],
+                        [ {text: '3', bold: true}, <%= tf3T %>, <%= tf3F %>, <%= numParticipants %> ]
+                        ]
+                }
+            }
+
+    ]
+};
+
+function pdfDownload(){
+pdfMake.createPdf(docDefinition).download();
+};
+
+</script>
+<% }%> 
 
 </div>
 </div>

@@ -2,37 +2,50 @@
 <%- include ../partials/main_nav.ejs %>
 
 <div class="row justify-content-md-center">
-  <div class="col-8">
-    <h2 class="display-3 text-center">Setting</h2>
-    <hr class="my-4">
-  </div>
-</div>
-<br>
-
-<div class="row justify-content-md-center">
-<div class="col-md-offset-3 col-md-8">
-
-    <form class="form" method="POST">
+<video class="w-100" src="/Assets/videos/setting page.mp4" autoplay muted loop></video>
+  <div class="col-md-8 p-lg-5 mx-auto my-5 overlay-container-center text-left text-black">
+         <br><br><br><br><br>
+         <br><br><br><br><br>
+         <br><br><br><br><br>
+         <br><br><br><br><br>
+         <br><br><br><br><br>
+         <br><br><br><br><br>
+          <h1 id="settingword">
+     Setting
+          </h1>
+          <form class="form" method="POST">
+          <div class="row justify-content-md-center" id="contact1">
+        <div class="col-lg-15">
+<br><br>
+        <h5 style="font-family: Garamond; font-size:30px;">Survey ON/OFF: </h5>
+        <%{if(setting.onOff === true){ %>
+        <button id="btnColor1" class="btn btn-dark" name="onAndOff" value="false" type="submit">Turn off the Survey</button>
+        <%}if(setting.onOff === false){%>
+         <button id="btnColor1" class="btn btn-success" name="onAndOff" value="true" type="submit">Turn on the Survey</button>
+        <%}}%>
+        <br>
+        <br><br>
 
         <div>
-        <h5>Survey ON/OFF: </h5>
-        <%{if(setting.onOff === true){ %>
-        <button class="btn btn-dark" name="onAndOff" value="false" type="submit">Turn off the Survey</button>
-        <%}if(setting.onOff === false){%>
-         <button class="btn btn-success" name="onAndOff" value="true" type="submit">Turn on the Survey</button>
-        <%}}%>
-        </div>
         <br>
+        <br>
+        <div class="row justify-content-md-center position-relative">
+<a href="/survey-list" id="btnColor1" class="btn btn-outline-secondary">
+        <i class="fas fa-undo"></i> Back</a>
+        </div>
 
-        
-        <a href="/survey-list" class="btn btn-outline-secondary">
-        <i class="fas fa-undo"></i> Back </a>
+        </div>
 
 
     </form>
+<br><br>
+</div>
+</div>
+      </div>
+</div>
+<br>
 
-</div>
-</div>
+
 
 <%- include ../partials/bottom_nav.ejs %>
 <%- include ../partials/footer.ejs %>
