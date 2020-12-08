@@ -158,10 +158,12 @@ module.exports.displaySettingPage = (req, res, next) => {
            res.end(err);
        }else{
            //show the edit view
+           if(req.user.displayName == surveyToSetting.writer){
            res.render('createSurvey/setting', {
                title: 'Edit Question', 
                setting: surveyToSetting,
                displayName: req.user ? req.user.displayName : ''})
+           }
        }
     });
 
