@@ -87,19 +87,19 @@ module.exports.processingAddPage = (req, res, next) => {
 
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
-    let user = req.user.displayname;
-    console.log(user);
 
     Survey.findById(id, (err, surveyToEdit) => {
        if(err){
            console.log(err);
            res.end(err);
        }else{
-           //show the edit view
+           if(req.user.displayName == surveyToEdit.writer){
+           //show the edit view          
            res.render('createSurvey/edit', {
                title: 'Edit Question', 
                survey: surveyToEdit,
                displayName: req.user ? req.user.displayName : ''})
+           }
        }
     });
 
@@ -124,45 +124,6 @@ module.exports.processingEditPage = (req, res, next) => {
     });
 
     Survey.updateOne({_id: id}, updatedServey, (err) => {
-        if(err){
-            console.log(err);
-            res.end(err);
-        }else{
-            // refresh the user list
-            res.redirect('/survey-list');
-        }
-    });
-}
-
-
-module.exports.displayOnOffPage = (req, res, next) => {
-    let id = req.params.id;
-
-    Survey.findById(id, (err, OnOffSurvey) => {
-       if(err){
-           console.log(err);
-           res.end(err);
-       }else{
-           //show the onoff view
-           res.render('createSurvey/onoff', {
-               title: '', 
-               survey: OnOffSurvey,
-               displayName: req.user ? req.user.displayName : ''})
-       }
-    });
-
-}
-
-module.exports.processingOnOffPage = (req, res, next) => {
-    let id = req.params.id;
-
-    let updatedOnOff = Survey({
-        "_id": id,
-        "onOff": req.body.onOff
-
-    });
-
-    Survey.updateOne({_id: id}, updatedOnOff, (err) => {
         if(err){
             console.log(err);
             res.end(err);
@@ -225,3 +186,43 @@ module.exports.processingSettingPage = (req, res, next) => {
     });
 }
 
+/*
+module.exports.displayOnOffPage = (req, res, next) => {
+    let id = req.params.id;
+
+    Survey.findById(id, (err, OnOffSurvey) => {
+       if(err){
+           console.log(err);
+           res.end(err);
+       }else{
+           //show the onoff view
+           res.render('createSurvey/onoff', {
+               title: '', 
+               survey: OnOffSurvey,
+               displayName: req.user ? req.user.displayName : ''})
+       }
+    });
+
+}
+
+module.exports.processingOnOffPage = (req, res, next) => {
+    let id = req.params.id;
+
+    let updatedOnOff = Survey({
+        "_id": id,
+        "onOff": req.body.onOff
+
+    });
+
+    Survey.updateOne({_id: id}, updatedOnOff, (err) => {
+        if(err){
+            console.log(err);
+            res.end(err);
+        }else{
+            // refresh the user list
+            res.redirect('/survey-list');
+        }
+    });
+}
+
+*/

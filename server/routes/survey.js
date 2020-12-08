@@ -7,6 +7,7 @@ let mongoose = require('mongoose');
 let passport = require('passport');
 
 let surveyController = require('../controllers/survey');
+const survey = require('../models/survey');
 
 //helper function for guard purposes
 function requireAuth(req, res, next)
@@ -18,6 +19,9 @@ function requireAuth(req, res, next)
     }
     next();
 }
+
+
+
 
 
 // create route // get route for the survey page - read operaton
@@ -33,15 +37,10 @@ router.get('/add', requireAuth, surveyController.displayAddPage);
 router.post('/add', requireAuth, surveyController.processingAddPage);
 
 // get route for displaying edit page - update operation
-router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
+router.get('/edit/:id', requireAuth,  surveyController.displayEditPage);
 
 // post route for processing edit page - update operation
 router.post('/edit/:id', requireAuth, surveyController.processingEditPage);
-
-router.get('/onoff/:id', requireAuth, surveyController.displayOnOffPage);
-router.post('/onoff/:id', requireAuth, surveyController.processingOnOffPage);
-
-
 
 // get to perform deletion - delete operation
 router.get('/delete/:id', requireAuth, surveyController.performDeletion);
@@ -51,6 +50,10 @@ router.get('/setting/:id', requireAuth, surveyController.displaySettingPage);
 
 // post route for processing edit page - update operation
 router.post('/setting/:id', requireAuth, surveyController.processingSettingPage);
+
+//router.get('/onoff/:id', requireAuth, surveyController.displayOnOffPage);
+//router.post('/onoff/:id', requireAuth, surveyController.processingOnOffPage);
+
 
 
 
